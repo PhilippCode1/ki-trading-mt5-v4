@@ -1,0 +1,52 @@
+# Konfiguration des Demo-Bots (Plan F-1). Keine Zugangsdaten, keine Kontonummern – die stehen nie in Dateien.
+
+[terminal]
+# Pfad zu terminal64.exe. Leer = das installierte Standard-Terminal. Rechnerspezifisch steht der Pfad in
+# %USERPROFILE%\KI-Trading-Bot\lokal.toml des Bot-Benutzers – auf dem VPS legt 40_bot.ps1 sie an:
+#   [terminal]
+#   pfad = 'C:\KI-Trading\mt5-demo\terminal64.exe'      (portables Demo-Terminal, Start mit /portable)
+# Geschrieben wird ohnehin nur auf DEMO (Demo-Prüfung vor jeder Sendung).
+pfad = ""
+
+[symbole]
+# Standardnamen; abweichende Brokernamen (Suffixe) in [symbol_namen] eintragen.
+strategie = ["EURUSD", "USDJPY", "GBPUSD", "CHFJPY", "CADJPY", "AUDUSD", "NZDUSD"]
+probe = ["EURUSD", "USDJPY", "GBPUSD", "CHFJPY", "CADJPY", "AUDUSD", "NZDUSD"]   # Plan F-03: Probe über alle 7 Symbole
+
+[symbol_namen]
+# Beispiel: EURUSD = "EURUSD.a"
+
+[ausfuehrung]
+deviation = 20
+
+[daten]
+entwicklung_start = "2010-01-01"
+entwicklung_ende = "2021-06-30"
+holdout_start = "2021-07-01"
+holdout_ende = "2026-06-30"
+zeitrahmen = ["D1", "H4", "H1"]
+
+[zeiten]
+# Handelsfenster für Einstiege (Europe/Berlin); Schutz, Abgleich und Schließen laufen immer.
+fenster_von = "08:00"
+fenster_bis = "22:00"
+freitag_bis = "20:00"
+
+[waechter]
+kursalter_s = 5                 # älterer Kurs = kein Einstieg
+korridor_prozent = "1"          # Kurs weiter als 1 % vom letzten Schluss = kein Einstieg (Fehlkurs)
+spread_faktor = "3"             # Spread > 3× Median der letzten Kerzen = kein Einstieg
+
+[kosten]
+# Startwert aus registers/cost_truth.json (RAW-Konto, EUR je Lot und Seite); F-04 kalibriert aus dem Rauchtest.
+provision_je_lot_seite = "3.25"
+
+[probe]
+abstand_points = 300            # SL/TP-Abstand der Probe (mind. stops_level + 50)
+sl_enger_points = 100           # SL wird um diesen Abstand enger gezogen
+sl_enger_nach_s = 20
+schliessen_nach_s = 60
+takt_min = 10                   # höchstens ein Zyklus je 10 Minuten und Symbol
+
+[meldungen]
+windows = true                  # zusätzlich zur Datei MELDUNGEN.txt eine Windows-Benachrichtigung

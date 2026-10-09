@@ -1,0 +1,4790 @@
+{
+ "auswahl": null,
+ "daten": {
+  "datensaetze": {
+   "S-REV-01-k2.0-z0.75-r3": {
+    "sha256": "51f24c958d714848",
+    "zaehlung": {
+     "ausserhalb_fenster": 6115,
+     "basissignale": 20716,
+     "offen": 0,
+     "ohne_merkmale": 80,
+     "stop_zu_ziel": 0,
+     "zeilen": 20636
+    }
+   },
+   "S-REV-02-L40-z0.5": {
+    "sha256": "145d10dd71319563",
+    "zaehlung": {
+     "ausserhalb_fenster": 3851,
+     "basissignale": 10211,
+     "offen": 3,
+     "ohne_merkmale": 135,
+     "stop_zu_ziel": 771,
+     "zeilen": 10076
+    }
+   }
+  },
+  "datensicht_seq": 34,
+  "f04_datensicht_seq": 3,
+  "holdout": "nicht gezogen"
+ },
+ "datum": "2026-10-09",
+ "einordnung": "Forschung auf historischen Daten belegt keinen künftigen Gewinn. Keine Anlageberatung, keine Gewinnzusage.",
+ "kandidat": null,
+ "kostenprofile": {
+  "GEGENPROBE_3_25": {
+   "dreifachtag": 2,
+   "faktor": "1",
+   "fx_gebuehr": "0",
+   "name": "GEGENPROBE_3_25",
+   "provision_je_lot_seite": "3.25",
+   "swap_punkte": "privat (Startwerte-Datei)"
+  },
+  "HAUPT": {
+   "dreifachtag": 2,
+   "faktor": "1",
+   "fx_gebuehr": "0",
+   "name": "HAUPT",
+   "provision_je_lot_seite": "0",
+   "swap_punkte": "privat (Startwerte-Datei)"
+  },
+  "KOSTEN_X1_5": {
+   "dreifachtag": 2,
+   "faktor": "1.5",
+   "fx_gebuehr": "0",
+   "name": "KOSTEN_X1_5",
+   "provision_je_lot_seite": "0",
+   "swap_punkte": "privat (Startwerte-Datei)"
+  }
+ },
+ "lauf": "F-05",
+ "prereg_sha": "88bdd6cc9398320b2e9619544f35c81caa82dfd344df78a55bc8ae1e0d983ffb",
+ "schema": "f05_runde2/1",
+ "varianten": [
+  {
+   "basis": "S-REV-01-k2.0-z0.75-r3",
+   "dsr": {
+    "N": 4,
+    "N_eff": 3.485624731857975,
+    "dsr": 0.006535037305920838,
+    "sr0": 0.0954908052369184,
+    "sr_monat": -0.14489796019679083
+   },
+   "fenster_ohne_schwelle": 0,
+   "gegenprobe_3_25": {
+    "bestanden": false,
+    "e_r": -0.05047422822791695,
+    "e_r_untergrenze": -0.07399080471092845,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": false,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 78.54255210539813,
+    "pf_eur": 0.8507116745252093,
+    "quote": 0.7200251098556183,
+    "technik_ok": true,
+    "trades": 1593,
+    "verlust_zu_gewinn_eur": 3.023055820127407
+   },
+   "handelbare_monate": 99.44969199178645,
+   "haupt": {
+    "bewertung": {
+     "bestanden": false,
+     "kennzahlen": {
+      "ausstiege": {
+       "SL": 408,
+       "TP": 1148,
+       "ZEITBARRIERE": 45
+      },
+      "band_befunde": {},
+      "e_r": -0.02821019926289456,
+      "e_r_untergrenze": -0.051956123493135116,
+      "gewinner": 1152,
+      "hebel": {
+       "max": 5.530551043150604,
+       "min": 5.260777432350695,
+       "mittel": 5.342157259265154
+      },
+      "max_dd_prozent": 66.19922753703153,
+      "n": 1601,
+      "pf_eur": 0.9134782928055253,
+      "pf_r": 0.8938936720729607,
+      "quote": 0.7195502810743285,
+      "schatten": {
+       "LOSS_LOCK": 13,
+       "STOP50": 2
+      },
+      "signale": {
+       "abgelehnt": {
+        "AUSSERHALB_FENSTER": 1835,
+        "MAX_STRATEGIEPOSITIONEN": 1421,
+        "SPREAD_HOCH": 10,
+        "STOP_ZU_ZIEL": 67,
+        "TAGESBUDGET": 570
+       },
+       "erledigt": 1601,
+       "gesamt": 5504,
+       "quote_signal_trade": 0.29087936046511625,
+       "sonst": 0
+      },
+      "stop50_ereignisse": [
+       680,
+       687
+      ],
+      "tagesverluste": {
+       "max_prozent": 3.0439345604837804,
+       "tage_ueber_3": 1
+      },
+      "trades_pro_monat": 15.70429825974863,
+      "verlust_zu_gewinn_eur": 2.808716506158148,
+      "verlust_zu_gewinn_r": 2.8702536321463397,
+      "wilson_95": [
+       0.6970403704035193,
+       0.7410091304590731
+      ],
+      "zufall": {
+       "mittel": 0.7288244846970644,
+       "p95": 0.7439100562148657
+      }
+     },
+     "kriterien": {
+      "band_budget": {
+       "ok": true,
+       "schwelle": 0,
+       "text": "Hebelband 5.25–14.25 und Tagesbudget je Einstieg (unabhängig nachgerechnet); 0 Trades ohne Einstiegskontext",
+       "wert": 0
+      },
+      "drawdown": {
+       "ok": false,
+       "schwelle": "25",
+       "text": "Max-Drawdown vom laufenden Equity-Hoch < 25 % (kein LOSS_LOCK)",
+       "wert": 66.19922753703153
+      },
+      "erwartung_r": {
+       "ok": false,
+       "schwelle": "0",
+       "text": "einseitige 95-%-Untergrenze von E[R] (iid-Bootstrap, 10000 Wiederholungen, 5. Perzentil) > 0",
+       "wert": -0.051956123493135116
+      },
+      "gewinnfaktor": {
+       "ok": false,
+       "schwelle": "1.2",
+       "text": "Summe Gewinne / Summe Verluste (EUR) ≥ 1.2",
+       "wert": 0.9134782928055253
+      },
+      "quote": {
+       "ok": false,
+       "schwelle": "0.85",
+       "text": "Gewinntrades (Ergebnis > 0) 1152/1601 ≥ 0.85",
+       "wert": 0.7195502810743285
+      },
+      "stop50": {
+       "ok": false,
+       "schwelle": 0,
+       "text": "keine 50-%-Ereignisse in der Folge (letzte 50, ab 20 Trades, ≤ 0.50) und keine Schattenereignisse LOSS_LOCK/STOP50 im OOS-Zeitraum",
+       "wert": 17
+      },
+      "technik": {
+       "ok": true,
+       "schwelle": "technik_ok, keine Sperren, Parität 100 %",
+       "text": "Lauf technisch gültig (keine Sperre/kein Vorfall, alle Trades vollständig, Signal- und Trade-Parität 100 %); sonst nicht bewertbar = nicht bestanden",
+       "wert": {
+        "datensatz_paritaet": 1.0,
+        "signal_paritaet": 1.0,
+        "sperren": [],
+        "technik_ok": true,
+        "trade_paritaet": 1.0,
+        "unvollstaendig": 0
+       }
+      },
+      "trades": {
+       "ok": true,
+       "schwelle": 200,
+       "text": "OOS-Trades ≥ 200; das Tor zählt Entwicklung + Holdout gemeinsam, hier nur die Entwicklung (strenger)",
+       "wert": 1601
+      },
+      "verlust_zu_gewinn": {
+       "ok": true,
+       "schwelle": "3",
+       "text": "Ø Verlust / Ø Gewinn (EUR, realisiert) ≤ 3",
+       "wert": 2.808716506158148
+      },
+      "zufallsbasis": {
+       "ok": false,
+       "schwelle": "95",
+       "text": "Quote > 95. Perzentil der Zufallsbasis (1000 Wiederholungen, zufällige Richtung)",
+       "wert": 0.7439100562148657
+      }
+     }
+    },
+    "einstieg_nachteil_ticks": {
+     "anteil_ungleich_null": 0.0,
+     "max": 0,
+     "min": 0,
+     "mittel": 0.0,
+     "n": 1601
+    },
+    "gesamt": {
+     "max_dd_prozent": 66.19922753703153,
+     "quote": 0.7195502810743285,
+     "trades": 1601
+    },
+    "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+    "monatsrenditen": [
+     0.016252,
+     0.0011601453182871965,
+     0.0,
+     -0.016348037360764515,
+     0.00620304996612703,
+     0.0,
+     0.017805256373844842,
+     0.0014810680862024556,
+     0.03214854245782081,
+     0.006127690421377824,
+     -0.02297304269920118,
+     0.004240213470167275,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     -0.029307573672902924,
+     0.007467339623589347,
+     -9.483751498334967e-05,
+     0.015766032238035407,
+     0.04403034570655998,
+     -0.001345234835220258,
+     -0.05442106526576248,
+     -0.02924330626089911,
+     0.02034366777440717,
+     0.006926960831669036,
+     0.0025972398574993466,
+     -0.013913381413542527,
+     0.018425089095361495,
+     0.02833307405102676,
+     -0.019619523080123297,
+     0.03507286352194586,
+     -0.05163635957049521,
+     0.01401331082767253,
+     0.024033966326286405,
+     0.05708562702126814,
+     0.05760553660473014,
+     -0.009073467069856641,
+     0.052218206167111925,
+     0.0043774492774327186,
+     -0.023036409730488958,
+     -0.030819334195836823,
+     0.046951802920212664,
+     0.036167994280296455,
+     -0.059364186681059514,
+     0.0034026180419053993,
+     -0.0927253509033709,
+     0.0021316025700511675,
+     -0.09706858787405921,
+     0.11149030797193424,
+     -0.02058871087829758,
+     0.005540569279502132,
+     0.004475748400789587,
+     -0.035137603580158785,
+     -0.006622269354752261,
+     -0.07723080213780087,
+     -0.017497588051772314,
+     -0.0022168519002650445,
+     -0.011613738805906562,
+     -0.13911231228124624,
+     -0.05950506327529447,
+     -0.019012393658365188,
+     -0.008464630759483194,
+     -0.011813997274324466,
+     0.024757890539107222,
+     -0.07828946835046226,
+     0.07590590705052086,
+     -0.004136735739434701,
+     -0.08381722754612274,
+     0.012169661417887266,
+     -0.04045502497178226,
+     0.025185055339772982,
+     -0.017873936030597323,
+     -0.08564342524831707,
+     -0.00022547801338838338,
+     -0.11056594380488913,
+     0.011431061458390072,
+     -0.0729551806423458,
+     -0.0832937707453191,
+     0.08162306502224514,
+     -0.022958456991278454,
+     -0.0019498900989832863,
+     0.05939412522737914,
+     -0.04233761357369432,
+     0.06652126944840951,
+     -0.02890087081728155,
+     -0.02192147073785328,
+     0.008277291273565888,
+     0.00786145288926388,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "offen_am_ende": 0,
+    "oos": {
+     "bis": 1625097600,
+     "monate": 101.95,
+     "von": 1356998400
+    },
+    "paritaet": {
+     "signale": {
+      "direkt": 5504,
+      "gleich": 5504,
+      "quote": 1.0,
+      "takt": 5504
+     },
+     "trades": {
+      "geprueft": 1601,
+      "gleich": 1601,
+      "quote": 1.0,
+      "trades": 1601,
+      "zwangsausstiege": 0
+     }
+    },
+    "profil": "HAUPT",
+    "schatten_gesamt": {
+     "LOSS_LOCK": 13,
+     "STOP50": 2
+    },
+    "schritte": 71392,
+    "sperren": [],
+    "strategie_hash": "a99193ecb89c3af6c395901f45e6686241e8b22168574b08bcda5af2d81213a9",
+    "tagesstopps": 1,
+    "technik_ok": true,
+    "teilperioden": {
+     "positiv": [
+      true,
+      true,
+      false,
+      false
+     ],
+     "r_summe": [
+      1.937,
+      7.199,
+      -32.823,
+      -21.477
+     ]
+    },
+    "variante": "F05-REV01-LOGREG",
+    "vorfaelle": {}
+   },
+   "id": "F05-REV01-LOGREG",
+   "kosten_x1_5": {
+    "bestanden": false,
+    "e_r": -0.024249658941602064,
+    "e_r_untergrenze": -0.049409818503775293,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 63.441469579882046,
+    "pf_eur": 0.925810540259029,
+    "quote": 0.7211267605633803,
+    "technik_ok": true,
+    "trades": 1420,
+    "verlust_zu_gewinn_eur": 2.7930753360564444
+   },
+   "modell": "LOGREG",
+   "nicht_bewertbar": false,
+   "teilperioden_r": [
+    1.937,
+    7.199,
+    -32.823,
+    -21.477
+   ],
+   "trades_pro_handelbarem_monat": 16.098591840105716,
+   "training": {
+    "datensatz_paritaet": {
+     "direkt": 5504,
+     "gleich": 5504,
+     "quote": 1.0,
+     "takt": 5504
+    },
+    "fenster": [
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 1,
+      "n_final": 5420,
+      "n_innen": 3587,
+      "n_validierung": 1831,
+      "schwelle": 0.75,
+      "test_bis": 1388534400,
+      "test_von": 1356998400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1831,
+         "quote": 0.6679410158383398,
+         "schwelle": 0.5,
+         "treffer": 1223,
+         "wilson_unten": 0.6460376238557246
+        },
+        {
+         "n": 1824,
+         "quote": 0.668859649122807,
+         "schwelle": 0.55,
+         "treffer": 1220,
+         "wilson_unten": 0.6469267707393482
+        },
+        {
+         "n": 1799,
+         "quote": 0.669260700389105,
+         "schwelle": 0.6,
+         "treffer": 1204,
+         "wilson_unten": 0.6471795458043601
+        },
+        {
+         "n": 1687,
+         "quote": 0.6692353289863663,
+         "schwelle": 0.65,
+         "treffer": 1129,
+         "wilson_unten": 0.6464218630987432
+        },
+        {
+         "n": 1242,
+         "quote": 0.6682769726247987,
+         "schwelle": 0.7,
+         "treffer": 830,
+         "wilson_unten": 0.6416083092838323
+        },
+        {
+         "n": 410,
+         "quote": 0.7048780487804878,
+         "schwelle": 0.75,
+         "treffer": 289,
+         "wilson_unten": 0.6589922342167814
+        },
+        {
+         "n": 48,
+         "quote": 0.7708333333333334,
+         "schwelle": 0.8,
+         "treffer": 37,
+         "wilson_unten": 0.6346073590999655
+        },
+        {
+         "n": 1,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 1,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 410,
+       "quote": 0.7048780487804878,
+       "schwelle": 0.75,
+       "treffer": 289,
+       "wilson_unten": 0.6589922342167814
+      }
+     },
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 2,
+      "n_final": 5514,
+      "n_innen": 3697,
+      "n_validierung": 1816,
+      "schwelle": 0.8,
+      "test_bis": 1420070400,
+      "test_von": 1388534400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1816,
+         "quote": 0.7279735682819384,
+         "schwelle": 0.5,
+         "treffer": 1322,
+         "wilson_unten": 0.7070413261955585
+        },
+        {
+         "n": 1816,
+         "quote": 0.7279735682819384,
+         "schwelle": 0.55,
+         "treffer": 1322,
+         "wilson_unten": 0.7070413261955585
+        },
+        {
+         "n": 1800,
+         "quote": 0.7294444444444445,
+         "schwelle": 0.6,
+         "treffer": 1313,
+         "wilson_unten": 0.70844908250778
+        },
+        {
+         "n": 1594,
+         "quote": 0.7459222082810539,
+         "schwelle": 0.65,
+         "treffer": 1189,
+         "wilson_unten": 0.7239770390626473
+        },
+        {
+         "n": 624,
+         "quote": 0.7596153846153846,
+         "schwelle": 0.7,
+         "treffer": 474,
+         "wilson_unten": 0.7245640550050568
+        },
+        {
+         "n": 83,
+         "quote": 0.8554216867469879,
+         "schwelle": 0.75,
+         "treffer": 71,
+         "wilson_unten": 0.7640819877833326
+        },
+        {
+         "n": 26,
+         "quote": 1.0,
+         "schwelle": 0.8,
+         "treffer": 26,
+         "wilson_unten": 0.8712710781407846
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 26,
+       "quote": 1.0,
+       "schwelle": 0.8,
+       "treffer": 26,
+       "wilson_unten": 0.8712710781407846
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 5375,
+      "n_innen": 3648,
+      "n_validierung": 1725,
+      "schwelle": 0.75,
+      "test_bis": 1451606400,
+      "test_von": 1420070400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1713,
+         "quote": 0.7092819614711033,
+         "schwelle": 0.5,
+         "treffer": 1215,
+         "wilson_unten": 0.6873288747827724
+        },
+        {
+         "n": 1686,
+         "quote": 0.7117437722419929,
+         "schwelle": 0.55,
+         "treffer": 1200,
+         "wilson_unten": 0.6896609105580332
+        },
+        {
+         "n": 1603,
+         "quote": 0.7161572052401747,
+         "schwelle": 0.6,
+         "treffer": 1148,
+         "wilson_unten": 0.6935896588590937
+        },
+        {
+         "n": 1391,
+         "quote": 0.7210639827462257,
+         "schwelle": 0.65,
+         "treffer": 1003,
+         "wilson_unten": 0.6969117110654913
+        },
+        {
+         "n": 960,
+         "quote": 0.7302083333333333,
+         "schwelle": 0.7,
+         "treffer": 701,
+         "wilson_unten": 0.7012548482919697
+        },
+        {
+         "n": 310,
+         "quote": 0.7774193548387097,
+         "schwelle": 0.75,
+         "treffer": 241,
+         "wilson_unten": 0.7278767312208723
+        },
+        {
+         "n": 47,
+         "quote": 0.7872340425531915,
+         "schwelle": 0.8,
+         "treffer": 37,
+         "wilson_unten": 0.6509597329080159
+        },
+        {
+         "n": 45,
+         "quote": 0.7777777777777778,
+         "schwelle": 0.85,
+         "treffer": 35,
+         "wilson_unten": 0.6373070782524372
+        },
+        {
+         "n": 30,
+         "quote": 0.8333333333333334,
+         "schwelle": 0.9,
+         "treffer": 25,
+         "wilson_unten": 0.6643564949358398
+        }
+       ],
+       "n": 310,
+       "quote": 0.7774193548387097,
+       "schwelle": 0.75,
+       "treffer": 241,
+       "wilson_unten": 0.7278767312208723
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 0,
+      "n_final": 5296,
+      "n_innen": 3543,
+      "n_validierung": 1753,
+      "schwelle": 0.75,
+      "test_bis": 1483228800,
+      "test_von": 1451606400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1751,
+         "quote": 0.7018846373500857,
+         "schwelle": 0.5,
+         "treffer": 1229,
+         "wilson_unten": 0.6800361448607043
+        },
+        {
+         "n": 1746,
+         "quote": 0.702176403207331,
+         "schwelle": 0.55,
+         "treffer": 1226,
+         "wilson_unten": 0.6803014566580997
+        },
+        {
+         "n": 1697,
+         "quote": 0.7053624042427814,
+         "schwelle": 0.6,
+         "treffer": 1197,
+         "wilson_unten": 0.6832282309195916
+        },
+        {
+         "n": 1535,
+         "quote": 0.7087947882736156,
+         "schwelle": 0.65,
+         "treffer": 1088,
+         "wilson_unten": 0.6855683613743309
+        },
+        {
+         "n": 1177,
+         "quote": 0.7102803738317757,
+         "schwelle": 0.7,
+         "treffer": 836,
+         "wilson_unten": 0.6837136995438311
+        },
+        {
+         "n": 516,
+         "quote": 0.7306201550387597,
+         "schwelle": 0.75,
+         "treffer": 377,
+         "wilson_unten": 0.6907413729161109
+        },
+        {
+         "n": 131,
+         "quote": 0.7633587786259542,
+         "schwelle": 0.8,
+         "treffer": 100,
+         "wilson_unten": 0.6837273045732117
+        },
+        {
+         "n": 31,
+         "quote": 0.8387096774193549,
+         "schwelle": 0.85,
+         "treffer": 26,
+         "wilson_unten": 0.6736564604120674
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 516,
+       "quote": 0.7306201550387597,
+       "schwelle": 0.75,
+       "treffer": 377,
+       "wilson_unten": 0.6907413729161109
+      }
+     },
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 2,
+      "n_final": 5235,
+      "n_innen": 3478,
+      "n_validierung": 1757,
+      "schwelle": 0.7,
+      "test_bis": 1514764800,
+      "test_von": 1483228800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1755,
+         "quote": 0.7037037037037037,
+         "schwelle": 0.5,
+         "treffer": 1235,
+         "wilson_unten": 0.6819142408807262
+        },
+        {
+         "n": 1752,
+         "quote": 0.7037671232876712,
+         "schwelle": 0.55,
+         "treffer": 1233,
+         "wilson_unten": 0.6819598473388369
+        },
+        {
+         "n": 1724,
+         "quote": 0.7047563805104409,
+         "schwelle": 0.6,
+         "treffer": 1215,
+         "wilson_unten": 0.6827880431931882
+        },
+        {
+         "n": 1552,
+         "quote": 0.717139175257732,
+         "schwelle": 0.65,
+         "treffer": 1113,
+         "wilson_unten": 0.6942169625506867
+        },
+        {
+         "n": 961,
+         "quote": 0.7336108220603538,
+         "schwelle": 0.7,
+         "treffer": 705,
+         "wilson_unten": 0.7047711817228587
+        },
+        {
+         "n": 263,
+         "quote": 0.6920152091254753,
+         "schwelle": 0.75,
+         "treffer": 182,
+         "wilson_unten": 0.6337904230171999
+        },
+        {
+         "n": 38,
+         "quote": 0.5789473684210527,
+         "schwelle": 0.8,
+         "treffer": 22,
+         "wilson_unten": 0.42192345343670545
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 961,
+       "quote": 0.7336108220603538,
+       "schwelle": 0.7,
+       "treffer": 705,
+       "wilson_unten": 0.7047711817228587
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 5294,
+      "n_innen": 3510,
+      "n_validierung": 1782,
+      "schwelle": 0.75,
+      "test_bis": 1546300800,
+      "test_von": 1514764800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1781,
+         "quote": 0.7445255474452555,
+         "schwelle": 0.5,
+         "treffer": 1326,
+         "wilson_unten": 0.7237593480626986
+        },
+        {
+         "n": 1780,
+         "quote": 0.744943820224719,
+         "schwelle": 0.55,
+         "treffer": 1326,
+         "wilson_unten": 0.724181616787535
+        },
+        {
+         "n": 1766,
+         "quote": 0.7463193657984145,
+         "schwelle": 0.6,
+         "treffer": 1318,
+         "wilson_unten": 0.7255061297468819
+        },
+        {
+         "n": 1616,
+         "quote": 0.7425742574257426,
+         "schwelle": 0.65,
+         "treffer": 1200,
+         "wilson_unten": 0.7206996479009963
+        },
+        {
+         "n": 1060,
+         "quote": 0.7443396226415094,
+         "schwelle": 0.7,
+         "treffer": 789,
+         "wilson_unten": 0.7172288700763921
+        },
+        {
+         "n": 303,
+         "quote": 0.7821782178217822,
+         "schwelle": 0.75,
+         "treffer": 237,
+         "wilson_unten": 0.7323262910938804
+        },
+        {
+         "n": 29,
+         "quote": 0.7931034482758621,
+         "schwelle": 0.8,
+         "treffer": 23,
+         "wilson_unten": 0.6160990959613211
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 303,
+       "quote": 0.7821782178217822,
+       "schwelle": 0.75,
+       "treffer": 237,
+       "wilson_unten": 0.7323262910938804
+      }
+     },
+     {
+      "gepurgt_final": 4,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 4,
+      "n_final": 5410,
+      "n_innen": 3541,
+      "n_validierung": 1869,
+      "schwelle": 0.65,
+      "test_bis": 1577836800,
+      "test_von": 1546300800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1869,
+         "quote": 0.7035848047084002,
+         "schwelle": 0.5,
+         "treffer": 1315,
+         "wilson_unten": 0.6824803656183801
+        },
+        {
+         "n": 1868,
+         "quote": 0.7039614561027837,
+         "schwelle": 0.55,
+         "treffer": 1315,
+         "wilson_unten": 0.6828580914795866
+        },
+        {
+         "n": 1864,
+         "quote": 0.7054721030042919,
+         "schwelle": 0.6,
+         "treffer": 1315,
+         "wilson_unten": 0.6843732645793027
+        },
+        {
+         "n": 1804,
+         "quote": 0.7084257206208425,
+         "schwelle": 0.65,
+         "treffer": 1278,
+         "wilson_unten": 0.6870278858973476
+        },
+        {
+         "n": 1458,
+         "quote": 0.700960219478738,
+         "schwelle": 0.7,
+         "treffer": 1022,
+         "wilson_unten": 0.6769564058071965
+        },
+        {
+         "n": 623,
+         "quote": 0.6918138041733547,
+         "schwelle": 0.75,
+         "treffer": 431,
+         "wilson_unten": 0.6544723591704354
+        },
+        {
+         "n": 118,
+         "quote": 0.7203389830508474,
+         "schwelle": 0.8,
+         "treffer": 85,
+         "wilson_unten": 0.6333941439231597
+        },
+        {
+         "n": 11,
+         "quote": 0.6363636363636364,
+         "schwelle": 0.85,
+         "treffer": 7,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 1804,
+       "quote": 0.7084257206208425,
+       "schwelle": 0.65,
+       "treffer": 1278,
+       "wilson_unten": 0.6870278858973476
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 4,
+      "gepurgt_validierung": 0,
+      "n_final": 5458,
+      "n_innen": 3651,
+      "n_validierung": 1803,
+      "schwelle": 0.7,
+      "test_bis": 1609459200,
+      "test_von": 1577836800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1790,
+         "quote": 0.7251396648044692,
+         "schwelle": 0.5,
+         "treffer": 1298,
+         "wilson_unten": 0.703992261361668
+        },
+        {
+         "n": 1757,
+         "quote": 0.726237905520774,
+         "schwelle": 0.55,
+         "treffer": 1276,
+         "wilson_unten": 0.7049121025342271
+        },
+        {
+         "n": 1697,
+         "quote": 0.7253977607542722,
+         "schwelle": 0.6,
+         "treffer": 1231,
+         "wilson_unten": 0.7036718130812636
+        },
+        {
+         "n": 1490,
+         "quote": 0.7348993288590604,
+         "schwelle": 0.65,
+         "treffer": 1095,
+         "wilson_unten": 0.7119042894757962
+        },
+        {
+         "n": 775,
+         "quote": 0.7483870967741936,
+         "schwelle": 0.7,
+         "treffer": 580,
+         "wilson_unten": 0.7166617062684775
+        },
+        {
+         "n": 110,
+         "quote": 0.7545454545454545,
+         "schwelle": 0.75,
+         "treffer": 83,
+         "wilson_unten": 0.666436424240854
+        },
+        {
+         "n": 30,
+         "quote": 0.7666666666666667,
+         "schwelle": 0.8,
+         "treffer": 23,
+         "wilson_unten": 0.5907167384187784
+        },
+        {
+         "n": 9,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.85,
+         "treffer": 6,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 775,
+       "quote": 0.7483870967741936,
+       "schwelle": 0.7,
+       "treffer": 580,
+       "wilson_unten": 0.7166617062684775
+      }
+     },
+     {
+      "gepurgt_final": 3,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 3,
+      "n_final": 5501,
+      "n_innen": 3676,
+      "n_validierung": 1825,
+      "schwelle": 0.8,
+      "test_bis": 1625097600,
+      "test_von": 1609459200,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1825,
+         "quote": 0.7205479452054795,
+         "schwelle": 0.5,
+         "treffer": 1315,
+         "wilson_unten": 0.6995136913716181
+        },
+        {
+         "n": 1825,
+         "quote": 0.7205479452054795,
+         "schwelle": 0.55,
+         "treffer": 1315,
+         "wilson_unten": 0.6995136913716181
+        },
+        {
+         "n": 1823,
+         "quote": 0.7202413603949533,
+         "schwelle": 0.6,
+         "treffer": 1313,
+         "wilson_unten": 0.6991890934376673
+        },
+        {
+         "n": 1790,
+         "quote": 0.7206703910614525,
+         "schwelle": 0.65,
+         "treffer": 1290,
+         "wilson_unten": 0.6994297998007992
+        },
+        {
+         "n": 1496,
+         "quote": 0.7212566844919787,
+         "schwelle": 0.7,
+         "treffer": 1079,
+         "wilson_unten": 0.6979909280334513
+        },
+        {
+         "n": 855,
+         "quote": 0.743859649122807,
+         "schwelle": 0.75,
+         "treffer": 636,
+         "wilson_unten": 0.713555711701721
+        },
+        {
+         "n": 237,
+         "quote": 0.7763713080168776,
+         "schwelle": 0.8,
+         "treffer": 184,
+         "wilson_unten": 0.7191551843509595
+        },
+        {
+         "n": 51,
+         "quote": 0.7843137254901961,
+         "schwelle": 0.85,
+         "treffer": 40,
+         "wilson_unten": 0.6537364041400255
+        },
+        {
+         "n": 3,
+         "quote": 0.3333333333333333,
+         "schwelle": 0.9,
+         "treffer": 1,
+         "wilson_unten": null
+        }
+       ],
+       "n": 237,
+       "quote": 0.7763713080168776,
+       "schwelle": 0.8,
+       "treffer": 184,
+       "wilson_unten": 0.7191551843509595
+      }
+     }
+    ],
+    "filter": {
+     "basissignale": 15215,
+     "durchgelassen_mit_label": 5504,
+     "durchgelassen_nie_handelbar": 1835,
+     "entscheidungen": {
+      "EMBARGO": 317,
+      "HANDELN": 5504,
+      "UNTER_SCHWELLE": 9394
+     },
+     "gewinnquote_basis": 0.7168583634571147,
+     "gewinnquote_durchgelassen": 0.734375
+    },
+    "holdout": {
+     "n_final": 5406,
+     "n_innen": 3653,
+     "n_validierung": 1747,
+     "schwelle": 0.7
+    },
+    "paritaet_max": 2.220446049250313e-16,
+    "sha256": "d9ee96f9387b3460be6e8477d8702140e73f80635b34430487766aa8b301a159"
+   },
+   "zusatz": {
+    "dsr": {
+     "ok": false,
+     "schwelle": "0.95",
+     "wert": 0.006535037305920838
+    },
+    "gewinnfaktor_kosten": {
+     "ok": false,
+     "schwelle": "1.0",
+     "wert": 0.925810540259029
+    },
+    "nur_berichten": true,
+    "teilperioden": {
+     "ok": false,
+     "positiv": 2,
+     "schwelle": "3/4",
+     "werte": [
+      "1",
+      "1",
+      "-1",
+      "-1"
+     ]
+    }
+   }
+  },
+  {
+   "basis": "S-REV-01-k2.0-z0.75-r3",
+   "dsr": {
+    "N": 4,
+    "N_eff": 3.485624731857975,
+    "dsr": 0.003512464808607778,
+    "sr0": 0.0954908052369184,
+    "sr_monat": -0.16412077858090876
+   },
+   "fenster_ohne_schwelle": 0,
+   "gegenprobe_3_25": {
+    "bestanden": false,
+    "e_r": -0.051815088726051485,
+    "e_r_untergrenze": -0.07206915895445051,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": false,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 88.24639278098749,
+    "pf_eur": 0.8302918819148664,
+    "quote": 0.7174952198852772,
+    "technik_ok": true,
+    "trades": 2092,
+    "verlust_zu_gewinn_eur": 3.0588798574181264
+   },
+   "handelbare_monate": 99.44969199178645,
+   "haupt": {
+    "bewertung": {
+     "bestanden": false,
+     "kennzahlen": {
+      "ausstiege": {
+       "SL": 533,
+       "TP": 1511,
+       "ZEITBARRIERE": 70
+      },
+      "band_befunde": {},
+      "e_r": -0.02642867956007238,
+      "e_r_untergrenze": -0.04732454827743782,
+      "gewinner": 1519,
+      "hebel": {
+       "max": 5.597638810657023,
+       "min": 5.2615123407760125,
+       "mittel": 5.347445544677404
+      },
+      "max_dd_prozent": 73.04379223988427,
+      "n": 2114,
+      "pf_eur": 0.9092088295814995,
+      "pf_r": 0.89969190790502,
+      "quote": 0.7185430463576159,
+      "schatten": {
+       "LOSS_LOCK": 25
+      },
+      "signale": {
+       "abgelehnt": {
+        "AUSSERHALB_FENSTER": 2085,
+        "MAX_STRATEGIEPOSITIONEN": 1870,
+        "SPREAD_HOCH": 15,
+        "STOP_ZU_ZIEL": 95,
+        "TAGESBUDGET": 671,
+        "TAGESSTOPP": 2
+       },
+       "erledigt": 2114,
+       "gesamt": 6852,
+       "quote_signal_trade": 0.30852305896088733,
+       "sonst": 0
+      },
+      "stop50_ereignisse": [],
+      "tagesverluste": {
+       "max_prozent": 3.032258638233975,
+       "tage_ueber_3": 1
+      },
+      "trades_pro_monat": 20.73634386077989,
+      "verlust_zu_gewinn_eur": 2.8078710780291076,
+      "verlust_zu_gewinn_r": 2.837572677979561,
+      "wilson_95": [
+       0.6989896737279017,
+       0.7373036078827641
+      ],
+      "zufall": {
+       "mittel": 0.7227847682119205,
+       "p95": 0.7360454115421002
+      }
+     },
+     "kriterien": {
+      "band_budget": {
+       "ok": true,
+       "schwelle": 0,
+       "text": "Hebelband 5.25–14.25 und Tagesbudget je Einstieg (unabhängig nachgerechnet); 0 Trades ohne Einstiegskontext",
+       "wert": 0
+      },
+      "drawdown": {
+       "ok": false,
+       "schwelle": "25",
+       "text": "Max-Drawdown vom laufenden Equity-Hoch < 25 % (kein LOSS_LOCK)",
+       "wert": 73.04379223988427
+      },
+      "erwartung_r": {
+       "ok": false,
+       "schwelle": "0",
+       "text": "einseitige 95-%-Untergrenze von E[R] (iid-Bootstrap, 10000 Wiederholungen, 5. Perzentil) > 0",
+       "wert": -0.04732454827743782
+      },
+      "gewinnfaktor": {
+       "ok": false,
+       "schwelle": "1.2",
+       "text": "Summe Gewinne / Summe Verluste (EUR) ≥ 1.2",
+       "wert": 0.9092088295814995
+      },
+      "quote": {
+       "ok": false,
+       "schwelle": "0.85",
+       "text": "Gewinntrades (Ergebnis > 0) 1519/2114 ≥ 0.85",
+       "wert": 0.7185430463576159
+      },
+      "stop50": {
+       "ok": false,
+       "schwelle": 0,
+       "text": "keine 50-%-Ereignisse in der Folge (letzte 50, ab 20 Trades, ≤ 0.50) und keine Schattenereignisse LOSS_LOCK/STOP50 im OOS-Zeitraum",
+       "wert": 25
+      },
+      "technik": {
+       "ok": true,
+       "schwelle": "technik_ok, keine Sperren, Parität 100 %",
+       "text": "Lauf technisch gültig (keine Sperre/kein Vorfall, alle Trades vollständig, Signal- und Trade-Parität 100 %); sonst nicht bewertbar = nicht bestanden",
+       "wert": {
+        "datensatz_paritaet": 1.0,
+        "signal_paritaet": 1.0,
+        "sperren": [],
+        "technik_ok": true,
+        "trade_paritaet": 1.0,
+        "unvollstaendig": 0
+       }
+      },
+      "trades": {
+       "ok": true,
+       "schwelle": 200,
+       "text": "OOS-Trades ≥ 200; das Tor zählt Entwicklung + Holdout gemeinsam, hier nur die Entwicklung (strenger)",
+       "wert": 2114
+      },
+      "verlust_zu_gewinn": {
+       "ok": true,
+       "schwelle": "3",
+       "text": "Ø Verlust / Ø Gewinn (EUR, realisiert) ≤ 3",
+       "wert": 2.8078710780291076
+      },
+      "zufallsbasis": {
+       "ok": false,
+       "schwelle": "95",
+       "text": "Quote > 95. Perzentil der Zufallsbasis (1000 Wiederholungen, zufällige Richtung)",
+       "wert": 0.7360454115421002
+      }
+     }
+    },
+    "einstieg_nachteil_ticks": {
+     "anteil_ungleich_null": 0.0,
+     "max": 0,
+     "min": 0,
+     "mittel": 0.0,
+     "n": 2114
+    },
+    "gesamt": {
+     "max_dd_prozent": 73.04379223988427,
+     "quote": 0.7185430463576159,
+     "trades": 2114
+    },
+    "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+    "monatsrenditen": [
+     0.036631,
+     -0.04987695718148502,
+     0.060075518287142096,
+     -0.015453545025031198,
+     0.03566863366544678,
+     0.012588434645716625,
+     0.047466211515449476,
+     0.05287902940134608,
+     0.05895142697813377,
+     -0.02818350133717342,
+     -0.05538464556246097,
+     0.02697897126719227,
+     -0.07058949409949845,
+     0.07845638119273207,
+     0.009740295218026102,
+     -0.018948043137140644,
+     -0.05623649262678794,
+     -0.0008190626722301791,
+     -0.009119654181993564,
+     0.024245346671497754,
+     -0.08447557407571593,
+     -0.11082489202223471,
+     -0.13012916857261103,
+     -0.03955813085797135,
+     0.0,
+     0.0,
+     -0.024678563374149233,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.005977235181215014,
+     0.0,
+     0.01044982754130771,
+     0.00956859156170407,
+     0.0,
+     0.010064002208948849,
+     -0.0020541241732891648,
+     0.028148904279512093,
+     0.004241521669462929,
+     -0.001022425789658107,
+     0.0004697699880866331,
+     0.028256857299552487,
+     -0.025863213204985358,
+     -0.04596695359552781,
+     0.006197637822100278,
+     -0.016113573739067927,
+     -0.031353318774402755,
+     0.042480744294340046,
+     0.06786674373583625,
+     0.06952119106943405,
+     0.06014315371982772,
+     0.05481403540677522,
+     -0.0267976445330219,
+     -0.08162062296610152,
+     -0.13845201693418654,
+     0.09300261354110163,
+     -0.020038897458252297,
+     0.04499602449260954,
+     -0.0030005965471706876,
+     -0.01791683635629687,
+     -0.047817674821326726,
+     -0.02564145135953205,
+     -0.0578204854288759,
+     -0.028572581284667106,
+     -0.0283030892371499,
+     -0.08558290346352247,
+     0.015376382907393559,
+     -0.17201875638917286,
+     0.09700060390525397,
+     0.023659518246210685,
+     -0.015054486725316224,
+     -0.09786261897209497,
+     0.08404456040978976,
+     0.048014547929472316,
+     -0.01987336248972592,
+     -0.05068303818698526,
+     -0.008739117000199938,
+     -0.011546459049218685,
+     -0.052231178058304656,
+     -0.026448937090558202,
+     -0.003646993542368656,
+     -0.07041014403267269,
+     -0.06292762129684298,
+     -0.03299297193871642,
+     -0.048005174210393936,
+     0.054701005246404893,
+     -0.004053402806605687,
+     -0.0565785533770107,
+     -0.018667668775835627,
+     -0.015749681746204242,
+     0.05372282115789557,
+     -0.044701908276015195,
+     -0.014543697687476332,
+     0.023055763145760126,
+     0.0019013278210368713,
+     0.008051088474067946,
+     0.0032803787696143055,
+     -0.013093950758360113,
+     0.0038233290420177646,
+     0.009816090233712748
+    ],
+    "offen_am_ende": 0,
+    "oos": {
+     "bis": 1625097600,
+     "monate": 101.95,
+     "von": 1356998400
+    },
+    "paritaet": {
+     "signale": {
+      "direkt": 6852,
+      "gleich": 6852,
+      "quote": 1.0,
+      "takt": 6852
+     },
+     "trades": {
+      "geprueft": 2114,
+      "gleich": 2114,
+      "quote": 1.0,
+      "trades": 2114,
+      "zwangsausstiege": 0
+     }
+    },
+    "profil": "HAUPT",
+    "schatten_gesamt": {
+     "LOSS_LOCK": 25
+    },
+    "schritte": 71392,
+    "sperren": [],
+    "strategie_hash": "bc2a3f923ff77a9b51c66104b2d4ee52b487b5cfc8441d2c67964071a3b59dde",
+    "tagesstopps": 1,
+    "technik_ok": true,
+    "teilperioden": {
+     "positiv": [
+      false,
+      true,
+      false,
+      false
+     ],
+     "r_summe": [
+      -15.89,
+      2.175,
+      -15.281,
+      -26.874
+     ]
+    },
+    "variante": "F05-REV01-HGB",
+    "vorfaelle": {}
+   },
+   "id": "F05-REV01-HGB",
+   "kosten_x1_5": {
+    "bestanden": false,
+    "e_r": -0.036286338178065404,
+    "e_r_untergrenze": -0.05762433546250237,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 77.744638521428,
+    "pf_eur": 0.8550309596254353,
+    "quote": 0.712608473711077,
+    "technik_ok": true,
+    "trades": 1959,
+    "verlust_zu_gewinn_eur": 2.8999812045893676
+   },
+   "modell": "HGB",
+   "nicht_bewertbar": false,
+   "teilperioden_r": [
+    -15.89,
+    2.175,
+    -15.281,
+    -26.874
+   ],
+   "trades_pro_handelbarem_monat": 21.256978856954078,
+   "training": {
+    "datensatz_paritaet": {
+     "direkt": 6852,
+     "gleich": 6852,
+     "quote": 1.0,
+     "takt": 6852
+    },
+    "fenster": [
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 1,
+      "n_final": 5420,
+      "n_innen": 3587,
+      "n_validierung": 1831,
+      "schwelle": 0.75,
+      "test_bis": 1388534400,
+      "test_von": 1356998400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1806,
+         "quote": 0.6694352159468439,
+         "schwelle": 0.5,
+         "treffer": 1209,
+         "wilson_unten": 0.6474000304415994
+        },
+        {
+         "n": 1778,
+         "quote": 0.6704161979752531,
+         "schwelle": 0.55,
+         "treffer": 1192,
+         "wilson_unten": 0.6482199788183816
+        },
+        {
+         "n": 1698,
+         "quote": 0.6713780918727915,
+         "schwelle": 0.6,
+         "treffer": 1140,
+         "wilson_unten": 0.6486716914029939
+        },
+        {
+         "n": 1507,
+         "quote": 0.6695421366954214,
+         "schwelle": 0.65,
+         "treffer": 1009,
+         "wilson_unten": 0.6453887285083743
+        },
+        {
+         "n": 1167,
+         "quote": 0.6743787489288775,
+         "schwelle": 0.7,
+         "treffer": 787,
+         "wilson_unten": 0.6469589909453934
+        },
+        {
+         "n": 708,
+         "quote": 0.6892655367231638,
+         "schwelle": 0.75,
+         "treffer": 488,
+         "wilson_unten": 0.6542315231707844
+        },
+        {
+         "n": 232,
+         "quote": 0.6637931034482759,
+         "schwelle": 0.8,
+         "treffer": 154,
+         "wilson_unten": 0.600774469282985
+        },
+        {
+         "n": 44,
+         "quote": 0.5681818181818182,
+         "schwelle": 0.85,
+         "treffer": 25,
+         "wilson_unten": 0.4222414699362943
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 2,
+         "wilson_unten": null
+        }
+       ],
+       "n": 708,
+       "quote": 0.6892655367231638,
+       "schwelle": 0.75,
+       "treffer": 488,
+       "wilson_unten": 0.6542315231707844
+      }
+     },
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 2,
+      "n_final": 5514,
+      "n_innen": 3697,
+      "n_validierung": 1816,
+      "schwelle": 0.7,
+      "test_bis": 1420070400,
+      "test_von": 1388534400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1766,
+         "quote": 0.7276330690826727,
+         "schwelle": 0.5,
+         "treffer": 1285,
+         "wilson_unten": 0.7063928394823548
+        },
+        {
+         "n": 1679,
+         "quote": 0.730196545562835,
+         "schwelle": 0.55,
+         "treffer": 1226,
+         "wilson_unten": 0.7084580062510476
+        },
+        {
+         "n": 1496,
+         "quote": 0.7312834224598931,
+         "schwelle": 0.6,
+         "treffer": 1094,
+         "wilson_unten": 0.7082487758402725
+        },
+        {
+         "n": 1162,
+         "quote": 0.7349397590361446,
+         "schwelle": 0.65,
+         "treffer": 854,
+         "wilson_unten": 0.7088184794577974
+        },
+        {
+         "n": 665,
+         "quote": 0.7443609022556391,
+         "schwelle": 0.7,
+         "treffer": 495,
+         "wilson_unten": 0.7098684818664461
+        },
+        {
+         "n": 231,
+         "quote": 0.7402597402597403,
+         "schwelle": 0.75,
+         "treffer": 171,
+         "wilson_unten": 0.6801102540539505
+        },
+        {
+         "n": 40,
+         "quote": 0.675,
+         "schwelle": 0.8,
+         "treffer": 27,
+         "wilson_unten": 0.5201774618987768
+        },
+        {
+         "n": 4,
+         "quote": 0.75,
+         "schwelle": 0.85,
+         "treffer": 3,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 665,
+       "quote": 0.7443609022556391,
+       "schwelle": 0.7,
+       "treffer": 495,
+       "wilson_unten": 0.7098684818664461
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 5375,
+      "n_innen": 3648,
+      "n_validierung": 1725,
+      "schwelle": 0.85,
+      "test_bis": 1451606400,
+      "test_von": 1420070400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1703,
+         "quote": 0.7105108631826189,
+         "schwelle": 0.5,
+         "treffer": 1210,
+         "wilson_unten": 0.6885162895993706
+        },
+        {
+         "n": 1642,
+         "quote": 0.7125456760048721,
+         "schwelle": 0.55,
+         "treffer": 1170,
+         "wilson_unten": 0.6901791910578067
+        },
+        {
+         "n": 1528,
+         "quote": 0.7166230366492147,
+         "schwelle": 0.6,
+         "treffer": 1095,
+         "wilson_unten": 0.6935065245693957
+        },
+        {
+         "n": 1328,
+         "quote": 0.7259036144578314,
+         "schwelle": 0.65,
+         "treffer": 964,
+         "wilson_unten": 0.7012872504727677
+        },
+        {
+         "n": 1021,
+         "quote": 0.7189030362389814,
+         "schwelle": 0.7,
+         "treffer": 734,
+         "wilson_unten": 0.6905480940348951
+        },
+        {
+         "n": 614,
+         "quote": 0.7345276872964169,
+         "schwelle": 0.75,
+         "treffer": 451,
+         "wilson_unten": 0.6982194210506427
+        },
+        {
+         "n": 271,
+         "quote": 0.7749077490774908,
+         "schwelle": 0.8,
+         "treffer": 210,
+         "wilson_unten": 0.721540499374325
+        },
+        {
+         "n": 85,
+         "quote": 0.8235294117647058,
+         "schwelle": 0.85,
+         "treffer": 70,
+         "wilson_unten": 0.7290439696176283
+        },
+        {
+         "n": 4,
+         "quote": 0.75,
+         "schwelle": 0.9,
+         "treffer": 3,
+         "wilson_unten": null
+        }
+       ],
+       "n": 85,
+       "quote": 0.8235294117647058,
+       "schwelle": 0.85,
+       "treffer": 70,
+       "wilson_unten": 0.7290439696176283
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 0,
+      "n_final": 5296,
+      "n_innen": 3543,
+      "n_validierung": 1753,
+      "schwelle": 0.8,
+      "test_bis": 1483228800,
+      "test_von": 1451606400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1726,
+         "quote": 0.7079953650057937,
+         "schwelle": 0.5,
+         "treffer": 1222,
+         "wilson_unten": 0.6861018050189415
+        },
+        {
+         "n": 1674,
+         "quote": 0.7096774193548387,
+         "schwelle": 0.55,
+         "treffer": 1188,
+         "wilson_unten": 0.6874728676742468
+        },
+        {
+         "n": 1560,
+         "quote": 0.7134615384615385,
+         "schwelle": 0.6,
+         "treffer": 1113,
+         "wilson_unten": 0.6905217429607583
+        },
+        {
+         "n": 1370,
+         "quote": 0.7138686131386861,
+         "schwelle": 0.65,
+         "treffer": 978,
+         "wilson_unten": 0.6893645681108947
+        },
+        {
+         "n": 1087,
+         "quote": 0.7203311867525299,
+         "schwelle": 0.7,
+         "treffer": 783,
+         "wilson_unten": 0.6929088134969656
+        },
+        {
+         "n": 731,
+         "quote": 0.7127222982216143,
+         "schwelle": 0.75,
+         "treffer": 521,
+         "wilson_unten": 0.6788752115342086
+        },
+        {
+         "n": 377,
+         "quote": 0.7427055702917772,
+         "schwelle": 0.8,
+         "treffer": 280,
+         "wilson_unten": 0.6962857165781886
+        },
+        {
+         "n": 124,
+         "quote": 0.75,
+         "schwelle": 0.85,
+         "treffer": 93,
+         "wilson_unten": 0.6670521262993695
+        },
+        {
+         "n": 13,
+         "quote": 0.6923076923076923,
+         "schwelle": 0.9,
+         "treffer": 9,
+         "wilson_unten": null
+        }
+       ],
+       "n": 377,
+       "quote": 0.7427055702917772,
+       "schwelle": 0.8,
+       "treffer": 280,
+       "wilson_unten": 0.6962857165781886
+      }
+     },
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 2,
+      "n_final": 5235,
+      "n_innen": 3478,
+      "n_validierung": 1757,
+      "schwelle": 0.7,
+      "test_bis": 1514764800,
+      "test_von": 1483228800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1741,
+         "quote": 0.7047673750717978,
+         "schwelle": 0.5,
+         "treffer": 1227,
+         "wilson_unten": 0.6829087842444438
+        },
+        {
+         "n": 1707,
+         "quote": 0.7065026362038664,
+         "schwelle": 0.55,
+         "treffer": 1206,
+         "wilson_unten": 0.6844564281091925
+        },
+        {
+         "n": 1619,
+         "quote": 0.7096973440395306,
+         "schwelle": 0.6,
+         "treffer": 1149,
+         "wilson_unten": 0.6871116723547261
+        },
+        {
+         "n": 1418,
+         "quote": 0.7150916784203103,
+         "schwelle": 0.65,
+         "treffer": 1014,
+         "wilson_unten": 0.6910418502300609
+        },
+        {
+         "n": 1033,
+         "quote": 0.7250726040658277,
+         "schwelle": 0.7,
+         "treffer": 749,
+         "wilson_unten": 0.6970495438970927
+        },
+        {
+         "n": 537,
+         "quote": 0.7132216014897579,
+         "schwelle": 0.75,
+         "treffer": 383,
+         "wilson_unten": 0.6735618354701763
+        },
+        {
+         "n": 165,
+         "quote": 0.7454545454545455,
+         "schwelle": 0.8,
+         "treffer": 123,
+         "wilson_unten": 0.6739275857952517
+        },
+        {
+         "n": 28,
+         "quote": 0.8571428571428571,
+         "schwelle": 0.85,
+         "treffer": 24,
+         "wilson_unten": 0.685101978364747
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 2,
+         "wilson_unten": null
+        }
+       ],
+       "n": 1033,
+       "quote": 0.7250726040658277,
+       "schwelle": 0.7,
+       "treffer": 749,
+       "wilson_unten": 0.6970495438970927
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 5294,
+      "n_innen": 3510,
+      "n_validierung": 1782,
+      "schwelle": 0.6,
+      "test_bis": 1546300800,
+      "test_von": 1514764800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1768,
+         "quote": 0.745475113122172,
+         "schwelle": 0.5,
+         "treffer": 1318,
+         "wilson_unten": 0.7246536195350446
+        },
+        {
+         "n": 1740,
+         "quote": 0.7459770114942529,
+         "schwelle": 0.55,
+         "treffer": 1298,
+         "wilson_unten": 0.7249967740935273
+        },
+        {
+         "n": 1661,
+         "quote": 0.7513546056592414,
+         "schwelle": 0.6,
+         "treffer": 1248,
+         "wilson_unten": 0.7300042843311393
+        },
+        {
+         "n": 1468,
+         "quote": 0.7486376021798365,
+         "schwelle": 0.65,
+         "treffer": 1099,
+         "wilson_unten": 0.7258174427069969
+        },
+        {
+         "n": 1046,
+         "quote": 0.7466539196940727,
+         "schwelle": 0.7,
+         "treffer": 781,
+         "wilson_unten": 0.7194269972430832
+        },
+        {
+         "n": 564,
+         "quote": 0.7659574468085106,
+         "schwelle": 0.75,
+         "treffer": 432,
+         "wilson_unten": 0.729287341368757
+        },
+        {
+         "n": 186,
+         "quote": 0.7903225806451613,
+         "schwelle": 0.8,
+         "treffer": 147,
+         "wilson_unten": 0.7262437075715622
+        },
+        {
+         "n": 34,
+         "quote": 0.8529411764705882,
+         "schwelle": 0.85,
+         "treffer": 29,
+         "wilson_unten": 0.6987194350454783
+        },
+        {
+         "n": 4,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 4,
+         "wilson_unten": null
+        }
+       ],
+       "n": 1661,
+       "quote": 0.7513546056592414,
+       "schwelle": 0.6,
+       "treffer": 1248,
+       "wilson_unten": 0.7300042843311393
+      }
+     },
+     {
+      "gepurgt_final": 4,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 4,
+      "n_final": 5410,
+      "n_innen": 3541,
+      "n_validierung": 1869,
+      "schwelle": 0.7,
+      "test_bis": 1577836800,
+      "test_von": 1546300800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1861,
+         "quote": 0.7044599677592692,
+         "schwelle": 0.5,
+         "treffer": 1311,
+         "wilson_unten": 0.6833253042778539
+        },
+        {
+         "n": 1840,
+         "quote": 0.7038043478260869,
+         "schwelle": 0.55,
+         "treffer": 1295,
+         "wilson_unten": 0.682535229623665
+        },
+        {
+         "n": 1807,
+         "quote": 0.7033757609297178,
+         "schwelle": 0.6,
+         "treffer": 1271,
+         "wilson_unten": 0.681901881552819
+        },
+        {
+         "n": 1671,
+         "quote": 0.7055655296229802,
+         "schwelle": 0.65,
+         "treffer": 1179,
+         "wilson_unten": 0.6832604302546421
+        },
+        {
+         "n": 1430,
+         "quote": 0.7104895104895105,
+         "schwelle": 0.7,
+         "treffer": 1016,
+         "wilson_unten": 0.6864436502635922
+        },
+        {
+         "n": 964,
+         "quote": 0.7012448132780082,
+         "schwelle": 0.75,
+         "treffer": 676,
+         "wilson_unten": 0.6715987581651851
+        },
+        {
+         "n": 405,
+         "quote": 0.6691358024691358,
+         "schwelle": 0.8,
+         "treffer": 271,
+         "wilson_unten": 0.6219097103211415
+        },
+        {
+         "n": 95,
+         "quote": 0.6947368421052632,
+         "schwelle": 0.85,
+         "treffer": 66,
+         "wilson_unten": 0.5960660393008851
+        },
+        {
+         "n": 4,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 4,
+         "wilson_unten": null
+        }
+       ],
+       "n": 1430,
+       "quote": 0.7104895104895105,
+       "schwelle": 0.7,
+       "treffer": 1016,
+       "wilson_unten": 0.6864436502635922
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 4,
+      "gepurgt_validierung": 0,
+      "n_final": 5458,
+      "n_innen": 3651,
+      "n_validierung": 1803,
+      "schwelle": 0.65,
+      "test_bis": 1609459200,
+      "test_von": 1577836800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1720,
+         "quote": 0.727906976744186,
+         "schwelle": 0.5,
+         "treffer": 1252,
+         "wilson_unten": 0.7063844144130995
+        },
+        {
+         "n": 1621,
+         "quote": 0.7310302282541641,
+         "schwelle": 0.55,
+         "treffer": 1185,
+         "wilson_unten": 0.7089164504352585
+        },
+        {
+         "n": 1501,
+         "quote": 0.7361758827448368,
+         "schwelle": 0.6,
+         "treffer": 1105,
+         "wilson_unten": 0.7132983896559737
+        },
+        {
+         "n": 1272,
+         "quote": 0.7413522012578616,
+         "schwelle": 0.65,
+         "treffer": 943,
+         "wilson_unten": 0.7165865888376086
+        },
+        {
+         "n": 897,
+         "quote": 0.738015607580825,
+         "schwelle": 0.7,
+         "treffer": 662,
+         "wilson_unten": 0.7082686587724367
+        },
+        {
+         "n": 440,
+         "quote": 0.7363636363636363,
+         "schwelle": 0.75,
+         "treffer": 324,
+         "wilson_unten": 0.6932764084314447
+        },
+        {
+         "n": 149,
+         "quote": 0.7583892617449665,
+         "schwelle": 0.8,
+         "treffer": 113,
+         "wilson_unten": 0.6837221833765111
+        },
+        {
+         "n": 26,
+         "quote": 0.5769230769230769,
+         "schwelle": 0.85,
+         "treffer": 15,
+         "wilson_unten": 0.3894861374659171
+        },
+        {
+         "n": 2,
+         "quote": 0.5,
+         "schwelle": 0.9,
+         "treffer": 1,
+         "wilson_unten": null
+        }
+       ],
+       "n": 1272,
+       "quote": 0.7413522012578616,
+       "schwelle": 0.65,
+       "treffer": 943,
+       "wilson_unten": 0.7165865888376086
+      }
+     },
+     {
+      "gepurgt_final": 3,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 3,
+      "n_final": 5501,
+      "n_innen": 3676,
+      "n_validierung": 1825,
+      "schwelle": 0.85,
+      "test_bis": 1625097600,
+      "test_von": 1609459200,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 1823,
+         "quote": 0.7207899067471202,
+         "schwelle": 0.5,
+         "treffer": 1314,
+         "wilson_unten": 0.6997488180884941
+        },
+        {
+         "n": 1814,
+         "quote": 0.721058434399118,
+         "schwelle": 0.55,
+         "treffer": 1308,
+         "wilson_unten": 0.699969644942833
+        },
+        {
+         "n": 1778,
+         "quote": 0.7232845894263217,
+         "schwelle": 0.6,
+         "treffer": 1286,
+         "wilson_unten": 0.7020253227055752
+        },
+        {
+         "n": 1644,
+         "quote": 0.7232360097323601,
+         "schwelle": 0.65,
+         "treffer": 1189,
+         "wilson_unten": 0.7011077689948059
+        },
+        {
+         "n": 1358,
+         "quote": 0.7253313696612665,
+         "schwelle": 0.7,
+         "treffer": 985,
+         "wilson_unten": 0.7009812776783443
+        },
+        {
+         "n": 855,
+         "quote": 0.7485380116959064,
+         "schwelle": 0.75,
+         "treffer": 640,
+         "wilson_unten": 0.7183892441364961
+        },
+        {
+         "n": 433,
+         "quote": 0.766743648960739,
+         "schwelle": 0.8,
+         "treffer": 332,
+         "wilson_unten": 0.7246709282247902
+        },
+        {
+         "n": 143,
+         "quote": 0.8111888111888111,
+         "schwelle": 0.85,
+         "treffer": 116,
+         "wilson_unten": 0.7392273258777858
+        },
+        {
+         "n": 23,
+         "quote": 0.6956521739130435,
+         "schwelle": 0.9,
+         "treffer": 16,
+         "wilson_unten": 0.49134243731240795
+        }
+       ],
+       "n": 143,
+       "quote": 0.8111888111888111,
+       "schwelle": 0.85,
+       "treffer": 116,
+       "wilson_unten": 0.7392273258777858
+      }
+     }
+    ],
+    "filter": {
+     "basissignale": 15215,
+     "durchgelassen_mit_label": 6852,
+     "durchgelassen_nie_handelbar": 2085,
+     "entscheidungen": {
+      "EMBARGO": 317,
+      "HANDELN": 6852,
+      "UNTER_SCHWELLE": 8046
+     },
+     "gewinnquote_basis": 0.7168583634571147,
+     "gewinnquote_durchgelassen": 0.7250437828371279
+    },
+    "holdout": {
+     "n_final": 5406,
+     "n_innen": 3653,
+     "n_validierung": 1747,
+     "schwelle": 0.7
+    },
+    "paritaet_max": 2.220446049250313e-16,
+    "sha256": "90555afb01f0f87c5deb36faabfe4d207e653b69dc1ae72a2aa7af8fbac1164d"
+   },
+   "zusatz": {
+    "dsr": {
+     "ok": false,
+     "schwelle": "0.95",
+     "wert": 0.003512464808607778
+    },
+    "gewinnfaktor_kosten": {
+     "ok": false,
+     "schwelle": "1.0",
+     "wert": 0.8550309596254353
+    },
+    "nur_berichten": true,
+    "teilperioden": {
+     "ok": false,
+     "positiv": 1,
+     "schwelle": "3/4",
+     "werte": [
+      "-1",
+      "1",
+      "-1",
+      "-1"
+     ]
+    }
+   }
+  },
+  {
+   "basis": "S-REV-02-L40-z0.5",
+   "dsr": {
+    "N": 4,
+    "N_eff": 3.485624731857975,
+    "dsr": 0.0219042568539851,
+    "sr0": 0.0954908052369184,
+    "sr_monat": -0.09832527744666154
+   },
+   "fenster_ohne_schwelle": 0,
+   "gegenprobe_3_25": {
+    "bestanden": false,
+    "e_r": -0.07662823545905983,
+    "e_r_untergrenze": -0.13189896332782475,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 41.26951878422436,
+    "pf_eur": 0.8296714401397752,
+    "quote": 0.575,
+    "technik_ok": true,
+    "trades": 600,
+    "verlust_zu_gewinn_eur": 1.6306951294390193
+   },
+   "handelbare_monate": 99.44969199178645,
+   "haupt": {
+    "bewertung": {
+     "bestanden": false,
+     "kennzahlen": {
+      "ausstiege": {
+       "SL": 241,
+       "TP": 344,
+       "ZEITBARRIERE": 16
+      },
+      "band_befunde": {},
+      "e_r": -0.03749366806077975,
+      "e_r_untergrenze": -0.09491199849387615,
+      "gewinner": 348,
+      "hebel": {
+       "max": 5.483732530124885,
+       "min": 5.266243456886117,
+       "mittel": 5.33881848288925
+      },
+      "max_dd_prozent": 32.639178278731414,
+      "n": 601,
+      "pf_eur": 0.9168291131101048,
+      "pf_r": 0.9091089707502064,
+      "quote": 0.5790349417637272,
+      "schatten": {
+       "LOSS_LOCK": 11,
+       "STOP50": 8
+      },
+      "signale": {
+       "abgelehnt": {
+        "AUSSERHALB_FENSTER": 375,
+        "MAX_STRATEGIEPOSITIONEN": 176,
+        "SPREAD_HOCH": 7,
+        "STOP_ZU_ZIEL": 202,
+        "TAGESBUDGET": 46,
+        "TAGESSTOPP": 4
+       },
+       "erledigt": 601,
+       "gesamt": 1411,
+       "quote_signal_trade": 0.42593905031892276,
+       "sonst": 0
+      },
+      "stop50_ereignisse": [
+       116,
+       208,
+       293,
+       298,
+       303,
+       309,
+       364,
+       537
+      ],
+      "tagesverluste": {
+       "max_prozent": 3.256991709169884,
+       "tage_ueber_3": 1
+      },
+      "trades_pro_monat": 5.895242507251047,
+      "verlust_zu_gewinn_eur": 1.5002731168518835,
+      "verlust_zu_gewinn_r": 1.5130134179747152,
+      "wilson_95": [
+       0.5391835808742681,
+       0.6178823718883432
+      ],
+      "zufall": {
+       "mittel": 0.5775623960066556,
+       "p95": 0.6056572379367721
+      }
+     },
+     "kriterien": {
+      "band_budget": {
+       "ok": true,
+       "schwelle": 0,
+       "text": "Hebelband 5.25–14.25 und Tagesbudget je Einstieg (unabhängig nachgerechnet); 0 Trades ohne Einstiegskontext",
+       "wert": 0
+      },
+      "drawdown": {
+       "ok": false,
+       "schwelle": "25",
+       "text": "Max-Drawdown vom laufenden Equity-Hoch < 25 % (kein LOSS_LOCK)",
+       "wert": 32.639178278731414
+      },
+      "erwartung_r": {
+       "ok": false,
+       "schwelle": "0",
+       "text": "einseitige 95-%-Untergrenze von E[R] (iid-Bootstrap, 10000 Wiederholungen, 5. Perzentil) > 0",
+       "wert": -0.09491199849387615
+      },
+      "gewinnfaktor": {
+       "ok": false,
+       "schwelle": "1.2",
+       "text": "Summe Gewinne / Summe Verluste (EUR) ≥ 1.2",
+       "wert": 0.9168291131101048
+      },
+      "quote": {
+       "ok": false,
+       "schwelle": "0.85",
+       "text": "Gewinntrades (Ergebnis > 0) 348/601 ≥ 0.85",
+       "wert": 0.5790349417637272
+      },
+      "stop50": {
+       "ok": false,
+       "schwelle": 0,
+       "text": "keine 50-%-Ereignisse in der Folge (letzte 50, ab 20 Trades, ≤ 0.50) und keine Schattenereignisse LOSS_LOCK/STOP50 im OOS-Zeitraum",
+       "wert": 27
+      },
+      "technik": {
+       "ok": true,
+       "schwelle": "technik_ok, keine Sperren, Parität 100 %",
+       "text": "Lauf technisch gültig (keine Sperre/kein Vorfall, alle Trades vollständig, Signal- und Trade-Parität 100 %); sonst nicht bewertbar = nicht bestanden",
+       "wert": {
+        "datensatz_paritaet": 1.0,
+        "signal_paritaet": 1.0,
+        "sperren": [],
+        "technik_ok": true,
+        "trade_paritaet": 1.0,
+        "unvollstaendig": 0
+       }
+      },
+      "trades": {
+       "ok": true,
+       "schwelle": 200,
+       "text": "OOS-Trades ≥ 200; das Tor zählt Entwicklung + Holdout gemeinsam, hier nur die Entwicklung (strenger)",
+       "wert": 601
+      },
+      "verlust_zu_gewinn": {
+       "ok": true,
+       "schwelle": "3",
+       "text": "Ø Verlust / Ø Gewinn (EUR, realisiert) ≤ 3",
+       "wert": 1.5002731168518835
+      },
+      "zufallsbasis": {
+       "ok": false,
+       "schwelle": "95",
+       "text": "Quote > 95. Perzentil der Zufallsbasis (1000 Wiederholungen, zufällige Richtung)",
+       "wert": 0.6056572379367721
+      }
+     }
+    },
+    "einstieg_nachteil_ticks": {
+     "anteil_ungleich_null": 0.0,
+     "max": 0,
+     "min": 0,
+     "mittel": 0.0,
+     "n": 601
+    },
+    "gesamt": {
+     "max_dd_prozent": 32.639178278731414,
+     "quote": 0.5790349417637272,
+     "trades": 601
+    },
+    "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+    "monatsrenditen": [
+     0.0,
+     0.007097,
+     0.0,
+     0.0,
+     0.005380812374577623,
+     0.015739998182744765,
+     0.0,
+     0.0,
+     -0.010977652843639914,
+     -0.015574691568607982,
+     0.009134932753832188,
+     0.0,
+     0.015589805911716156,
+     -0.04941723079141822,
+     -0.014573945062470015,
+     0.01701253834686895,
+     0.02281400712937723,
+     0.024366242678376598,
+     -0.0028292105741013008,
+     -0.042532131864000566,
+     -0.010113776147194248,
+     0.011875027115471623,
+     -0.04983268305331479,
+     0.03855009277334832,
+     0.0,
+     0.0,
+     -0.02381021348086783,
+     0.012090569588863408,
+     0.0,
+     0.008389203769068633,
+     0.006924881288491032,
+     -0.013086278691330881,
+     0.0,
+     0.017170866474126148,
+     0.008255081610870903,
+     0.01441369662872123,
+     0.0,
+     -0.013734828914752662,
+     0.0,
+     0.007634660564641043,
+     0.0,
+     0.0,
+     0.017468007996232313,
+     0.0,
+     -0.008720139061335981,
+     0.0,
+     0.0,
+     -0.012430220918243116,
+     -0.008628544410014144,
+     0.008912433397266498,
+     -0.011309940452641082,
+     0.0,
+     0.007310534043489725,
+     0.004916750361091362,
+     0.0032932180386043403,
+     -0.010350345819753451,
+     0.01721865662423679,
+     0.011699603791081084,
+     -0.00171609618867932,
+     0.0,
+     -0.02588605406350733,
+     -0.04822195994985316,
+     -0.03055576990680008,
+     0.021153340158180198,
+     -0.040303267826674406,
+     0.03219150652324735,
+     -0.007556441062710592,
+     0.008622711760255575,
+     -0.025602223830845608,
+     4.818207895586074e-05,
+     -0.021938596579685398,
+     -0.000430742653031065,
+     -0.03835376231325964,
+     -0.026426877376142636,
+     -0.047155329442181135,
+     -0.008638509715753974,
+     -0.06339912732569516,
+     0.03334444861075175,
+     -0.010166999630436995,
+     0.02166564083140003,
+     0.033721239693823644,
+     0.02354624391106147,
+     -0.01721932869646178,
+     0.0030789133905992547,
+     0.03379074845130497,
+     0.007856292954508896,
+     -0.0018165713707864622,
+     0.013323796574090122,
+     -0.004286908487331998,
+     -0.007958695591688311,
+     -0.04631955554688415,
+     0.016494497358962457,
+     -0.011756285386154855,
+     0.0283860275726707,
+     -0.009187631662982372,
+     0.01040210565501286,
+     -0.007504593008735989,
+     0.0,
+     0.0,
+     -0.005660414964223786,
+     0.006479384232997254,
+     0.0
+    ],
+    "offen_am_ende": 0,
+    "oos": {
+     "bis": 1625097600,
+     "monate": 101.95,
+     "von": 1356998400
+    },
+    "paritaet": {
+     "signale": {
+      "direkt": 1411,
+      "gleich": 1411,
+      "quote": 1.0,
+      "takt": 1411
+     },
+     "trades": {
+      "geprueft": 601,
+      "gleich": 601,
+      "quote": 1.0,
+      "trades": 601,
+      "zwangsausstiege": 0
+     }
+    },
+    "profil": "HAUPT",
+    "schatten_gesamt": {
+     "LOSS_LOCK": 11,
+     "STOP50": 8
+    },
+    "schritte": 71392,
+    "sperren": [],
+    "strategie_hash": "a6b7bea2b0a90b00d7e38506c9d935d4b1cdf108d01f9cd4beb3eb892e024636",
+    "tagesstopps": 1,
+    "technik_ok": true,
+    "teilperioden": {
+     "positiv": [
+      false,
+      true,
+      false,
+      true
+     ],
+     "r_summe": [
+      -6.224,
+      2.16,
+      -21.934,
+      3.464
+     ]
+    },
+    "variante": "F05-REV02-LOGREG",
+    "vorfaelle": {}
+   },
+   "id": "F05-REV02-LOGREG",
+   "kosten_x1_5": {
+    "bestanden": false,
+    "e_r": -0.02463086195511979,
+    "e_r_untergrenze": -0.08505323122517633,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 26.817597486073417,
+    "pf_eur": 0.9320277489094387,
+    "quote": 0.5892514395393474,
+    "technik_ok": true,
+    "trades": 521,
+    "verlust_zu_gewinn_eur": 1.5392024979201864
+   },
+   "modell": "LOGREG",
+   "nicht_bewertbar": false,
+   "teilperioden_r": [
+    -6.224,
+    2.16,
+    -21.934,
+    3.464
+   ],
+   "trades_pro_handelbarem_monat": 6.043256524611826,
+   "training": {
+    "datensatz_paritaet": {
+     "direkt": 1411,
+     "gleich": 1411,
+     "quote": 1.0,
+     "takt": 1411
+    },
+    "fenster": [
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 2,
+      "n_final": 2424,
+      "n_innen": 1538,
+      "n_validierung": 886,
+      "schwelle": 0.75,
+      "test_bis": 1388534400,
+      "test_von": 1356998400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 460,
+         "quote": 0.5391304347826087,
+         "schwelle": 0.5,
+         "treffer": 248,
+         "wilson_unten": 0.49344246857695917
+        },
+        {
+         "n": 335,
+         "quote": 0.5701492537313433,
+         "schwelle": 0.55,
+         "treffer": 191,
+         "wilson_unten": 0.5166367650591407
+        },
+        {
+         "n": 211,
+         "quote": 0.6066350710900474,
+         "schwelle": 0.6,
+         "treffer": 128,
+         "wilson_unten": 0.5393798994684924
+        },
+        {
+         "n": 129,
+         "quote": 0.6201550387596899,
+         "schwelle": 0.65,
+         "treffer": 80,
+         "wilson_unten": 0.5340730116146917
+        },
+        {
+         "n": 67,
+         "quote": 0.6119402985074627,
+         "schwelle": 0.7,
+         "treffer": 41,
+         "wilson_unten": 0.49223089672129616
+        },
+        {
+         "n": 36,
+         "quote": 0.7222222222222222,
+         "schwelle": 0.75,
+         "treffer": 26,
+         "wilson_unten": 0.5600751000260289
+        },
+        {
+         "n": 17,
+         "quote": 0.8823529411764706,
+         "schwelle": 0.8,
+         "treffer": 15,
+         "wilson_unten": null
+        },
+        {
+         "n": 10,
+         "quote": 0.9,
+         "schwelle": 0.85,
+         "treffer": 9,
+         "wilson_unten": null
+        },
+        {
+         "n": 7,
+         "quote": 0.8571428571428571,
+         "schwelle": 0.9,
+         "treffer": 6,
+         "wilson_unten": null
+        }
+       ],
+       "n": 36,
+       "quote": 0.7222222222222222,
+       "schwelle": 0.75,
+       "treffer": 26,
+       "wilson_unten": 0.5600751000260289
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 2744,
+      "n_innen": 1853,
+      "n_validierung": 889,
+      "schwelle": 0.55,
+      "test_bis": 1420070400,
+      "test_von": 1388534400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 408,
+         "quote": 0.6053921568627451,
+         "schwelle": 0.5,
+         "treffer": 247,
+         "wilson_unten": 0.5571942757869809
+        },
+        {
+         "n": 278,
+         "quote": 0.6294964028776978,
+         "schwelle": 0.55,
+         "treffer": 175,
+         "wilson_unten": 0.5713220230729827
+        },
+        {
+         "n": 163,
+         "quote": 0.6319018404907976,
+         "schwelle": 0.6,
+         "treffer": 103,
+         "wilson_unten": 0.5556201227329712
+        },
+        {
+         "n": 97,
+         "quote": 0.6494845360824743,
+         "schwelle": 0.65,
+         "treffer": 63,
+         "wilson_unten": 0.5504910713012011
+        },
+        {
+         "n": 52,
+         "quote": 0.6923076923076923,
+         "schwelle": 0.7,
+         "treffer": 36,
+         "wilson_unten": 0.5573041117529434
+        },
+        {
+         "n": 16,
+         "quote": 0.6875,
+         "schwelle": 0.75,
+         "treffer": 11,
+         "wilson_unten": null
+        },
+        {
+         "n": 9,
+         "quote": 0.5555555555555556,
+         "schwelle": 0.8,
+         "treffer": 5,
+         "wilson_unten": null
+        },
+        {
+         "n": 7,
+         "quote": 0.5714285714285714,
+         "schwelle": 0.85,
+         "treffer": 4,
+         "wilson_unten": null
+        },
+        {
+         "n": 4,
+         "quote": 0.5,
+         "schwelle": 0.9,
+         "treffer": 2,
+         "wilson_unten": null
+        }
+       ],
+       "n": 278,
+       "quote": 0.6294964028776978,
+       "schwelle": 0.55,
+       "treffer": 175,
+       "wilson_unten": 0.5713220230729827
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 0,
+      "n_final": 2632,
+      "n_innen": 1777,
+      "n_validierung": 855,
+      "schwelle": 0.7,
+      "test_bis": 1451606400,
+      "test_von": 1420070400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 501,
+         "quote": 0.5868263473053892,
+         "schwelle": 0.5,
+         "treffer": 294,
+         "wilson_unten": 0.5432077626547007
+        },
+        {
+         "n": 330,
+         "quote": 0.6272727272727273,
+         "schwelle": 0.55,
+         "treffer": 207,
+         "wilson_unten": 0.5739192819333552
+        },
+        {
+         "n": 191,
+         "quote": 0.6335078534031413,
+         "schwelle": 0.6,
+         "treffer": 121,
+         "wilson_unten": 0.5631669846342374
+        },
+        {
+         "n": 86,
+         "quote": 0.6976744186046512,
+         "schwelle": 0.65,
+         "treffer": 60,
+         "wilson_unten": 0.5938796504460166
+        },
+        {
+         "n": 42,
+         "quote": 0.7619047619047619,
+         "schwelle": 0.7,
+         "treffer": 32,
+         "wilson_unten": 0.6147245613168169
+        },
+        {
+         "n": 15,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.75,
+         "treffer": 10,
+         "wilson_unten": null
+        },
+        {
+         "n": 8,
+         "quote": 0.75,
+         "schwelle": 0.8,
+         "treffer": 6,
+         "wilson_unten": null
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 2,
+         "wilson_unten": null
+        }
+       ],
+       "n": 42,
+       "quote": 0.7619047619047619,
+       "schwelle": 0.7,
+       "treffer": 32,
+       "wilson_unten": 0.6147245613168169
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 1,
+      "n_final": 2525,
+      "n_innen": 1744,
+      "n_validierung": 781,
+      "schwelle": 0.7,
+      "test_bis": 1483228800,
+      "test_von": 1451606400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 498,
+         "quote": 0.572289156626506,
+         "schwelle": 0.5,
+         "treffer": 285,
+         "wilson_unten": 0.5284462405956311
+        },
+        {
+         "n": 322,
+         "quote": 0.5962732919254659,
+         "schwelle": 0.55,
+         "treffer": 192,
+         "wilson_unten": 0.5418526898118692
+        },
+        {
+         "n": 188,
+         "quote": 0.6382978723404256,
+         "schwelle": 0.6,
+         "treffer": 120,
+         "wilson_unten": 0.5674792235398644
+        },
+        {
+         "n": 110,
+         "quote": 0.7181818181818181,
+         "schwelle": 0.65,
+         "treffer": 79,
+         "wilson_unten": 0.6278504468827402
+        },
+        {
+         "n": 45,
+         "quote": 0.8444444444444444,
+         "schwelle": 0.7,
+         "treffer": 38,
+         "wilson_unten": 0.7121609112760374
+        },
+        {
+         "n": 24,
+         "quote": 0.8333333333333334,
+         "schwelle": 0.75,
+         "treffer": 20,
+         "wilson_unten": 0.6414692935030095
+        },
+        {
+         "n": 11,
+         "quote": 0.8181818181818182,
+         "schwelle": 0.8,
+         "treffer": 9,
+         "wilson_unten": null
+        },
+        {
+         "n": 8,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 8,
+         "wilson_unten": null
+        },
+        {
+         "n": 5,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 5,
+         "wilson_unten": null
+        }
+       ],
+       "n": 45,
+       "quote": 0.8444444444444444,
+       "schwelle": 0.7,
+       "treffer": 38,
+       "wilson_unten": 0.7121609112760374
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 1,
+      "n_final": 2581,
+      "n_innen": 1636,
+      "n_validierung": 944,
+      "schwelle": 0.65,
+      "test_bis": 1514764800,
+      "test_von": 1483228800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 542,
+         "quote": 0.5627306273062731,
+         "schwelle": 0.5,
+         "treffer": 305,
+         "wilson_unten": 0.5206727905928407
+        },
+        {
+         "n": 354,
+         "quote": 0.6073446327683616,
+         "schwelle": 0.55,
+         "treffer": 215,
+         "wilson_unten": 0.5555819992446576
+        },
+        {
+         "n": 223,
+         "quote": 0.6502242152466368,
+         "schwelle": 0.6,
+         "treffer": 145,
+         "wilson_unten": 0.5855678950055241
+        },
+        {
+         "n": 117,
+         "quote": 0.6752136752136753,
+         "schwelle": 0.65,
+         "treffer": 79,
+         "wilson_unten": 0.5859633558382507
+        },
+        {
+         "n": 57,
+         "quote": 0.6140350877192983,
+         "schwelle": 0.7,
+         "treffer": 35,
+         "wilson_unten": 0.4842973291580957
+        },
+        {
+         "n": 33,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.75,
+         "treffer": 22,
+         "wilson_unten": 0.4960789442780561
+        },
+        {
+         "n": 12,
+         "quote": 0.4166666666666667,
+         "schwelle": 0.8,
+         "treffer": 5,
+         "wilson_unten": null
+        },
+        {
+         "n": 4,
+         "quote": 0.5,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 3,
+         "quote": 0.3333333333333333,
+         "schwelle": 0.9,
+         "treffer": 1,
+         "wilson_unten": null
+        }
+       ],
+       "n": 117,
+       "quote": 0.6752136752136753,
+       "schwelle": 0.65,
+       "treffer": 79,
+       "wilson_unten": 0.5859633558382507
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 0,
+      "n_final": 2656,
+      "n_innen": 1726,
+      "n_validierung": 929,
+      "schwelle": 0.6,
+      "test_bis": 1546300800,
+      "test_von": 1514764800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 427,
+         "quote": 0.6088992974238876,
+         "schwelle": 0.5,
+         "treffer": 260,
+         "wilson_unten": 0.5618387492528186
+        },
+        {
+         "n": 261,
+         "quote": 0.6168582375478927,
+         "schwelle": 0.55,
+         "treffer": 161,
+         "wilson_unten": 0.5565886227444824
+        },
+        {
+         "n": 126,
+         "quote": 0.6507936507936508,
+         "schwelle": 0.6,
+         "treffer": 82,
+         "wilson_unten": 0.5642128669892414
+        },
+        {
+         "n": 62,
+         "quote": 0.5967741935483871,
+         "schwelle": 0.65,
+         "treffer": 37,
+         "wilson_unten": 0.4725046770040024
+        },
+        {
+         "n": 21,
+         "quote": 0.5714285714285714,
+         "schwelle": 0.7,
+         "treffer": 12,
+         "wilson_unten": 0.3654655436930671
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.75,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.8,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 126,
+       "quote": 0.6507936507936508,
+       "schwelle": 0.6,
+       "treffer": 82,
+       "wilson_unten": 0.5642128669892414
+      }
+     },
+     {
+      "gepurgt_final": 3,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 3,
+      "n_final": 2862,
+      "n_innen": 1874,
+      "n_validierung": 988,
+      "schwelle": 0.5,
+      "test_bis": 1577836800,
+      "test_von": 1546300800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 614,
+         "quote": 0.5309446254071661,
+         "schwelle": 0.5,
+         "treffer": 326,
+         "wilson_unten": 0.49140161913509406
+        },
+        {
+         "n": 422,
+         "quote": 0.5284360189573459,
+         "schwelle": 0.55,
+         "treffer": 223,
+         "wilson_unten": 0.4807665494801088
+        },
+        {
+         "n": 243,
+         "quote": 0.522633744855967,
+         "schwelle": 0.6,
+         "treffer": 127,
+         "wilson_unten": 0.459969670612267
+        },
+        {
+         "n": 117,
+         "quote": 0.5470085470085471,
+         "schwelle": 0.65,
+         "treffer": 64,
+         "wilson_unten": 0.45674877894037474
+        },
+        {
+         "n": 38,
+         "quote": 0.631578947368421,
+         "schwelle": 0.7,
+         "treffer": 24,
+         "wilson_unten": 0.47283959557009003
+        },
+        {
+         "n": 8,
+         "quote": 0.875,
+         "schwelle": 0.75,
+         "treffer": 7,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.8,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 614,
+       "quote": 0.5309446254071661,
+       "schwelle": 0.5,
+       "treffer": 326,
+       "wilson_unten": 0.49140161913509406
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 3,
+      "gepurgt_validierung": 1,
+      "n_final": 2838,
+      "n_innen": 1917,
+      "n_validierung": 918,
+      "schwelle": 0.6,
+      "test_bis": 1609459200,
+      "test_von": 1577836800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 461,
+         "quote": 0.596529284164859,
+         "schwelle": 0.5,
+         "treffer": 275,
+         "wilson_unten": 0.5511262073071596
+        },
+        {
+         "n": 314,
+         "quote": 0.6178343949044586,
+         "schwelle": 0.55,
+         "treffer": 194,
+         "wilson_unten": 0.5629711628173806
+        },
+        {
+         "n": 181,
+         "quote": 0.6464088397790055,
+         "schwelle": 0.6,
+         "treffer": 117,
+         "wilson_unten": 0.5743777866562509
+        },
+        {
+         "n": 69,
+         "quote": 0.6086956521739131,
+         "schwelle": 0.65,
+         "treffer": 42,
+         "wilson_unten": 0.49073991842972764
+        },
+        {
+         "n": 19,
+         "quote": 0.631578947368421,
+         "schwelle": 0.7,
+         "treffer": 12,
+         "wilson_unten": null
+        },
+        {
+         "n": 7,
+         "quote": 0.5714285714285714,
+         "schwelle": 0.75,
+         "treffer": 4,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.8,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 181,
+       "quote": 0.6464088397790055,
+       "schwelle": 0.6,
+       "treffer": 117,
+       "wilson_unten": 0.5743777866562509
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 1,
+      "n_final": 2824,
+      "n_innen": 1909,
+      "n_validierung": 914,
+      "schwelle": 0.7,
+      "test_bis": 1625097600,
+      "test_von": 1609459200,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 570,
+         "quote": 0.5456140350877193,
+         "schwelle": 0.5,
+         "treffer": 311,
+         "wilson_unten": 0.5045688200084397
+        },
+        {
+         "n": 382,
+         "quote": 0.5706806282722513,
+         "schwelle": 0.55,
+         "treffer": 218,
+         "wilson_unten": 0.5205828900159263
+        },
+        {
+         "n": 217,
+         "quote": 0.6175115207373272,
+         "schwelle": 0.6,
+         "treffer": 134,
+         "wilson_unten": 0.5513375999278075
+        },
+        {
+         "n": 96,
+         "quote": 0.625,
+         "schwelle": 0.65,
+         "treffer": 60,
+         "wilson_unten": 0.5251071844189874
+        },
+        {
+         "n": 33,
+         "quote": 0.7272727272727273,
+         "schwelle": 0.7,
+         "treffer": 24,
+         "wilson_unten": 0.5578244099712737
+        },
+        {
+         "n": 9,
+         "quote": 0.8888888888888888,
+         "schwelle": 0.75,
+         "treffer": 8,
+         "wilson_unten": null
+        },
+        {
+         "n": 4,
+         "quote": 1.0,
+         "schwelle": 0.8,
+         "treffer": 4,
+         "wilson_unten": null
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.9,
+         "treffer": 2,
+         "wilson_unten": null
+        }
+       ],
+       "n": 33,
+       "quote": 0.7272727272727273,
+       "schwelle": 0.7,
+       "treffer": 24,
+       "wilson_unten": 0.5578244099712737
+      }
+     }
+    ],
+    "filter": {
+     "basissignale": 7650,
+     "durchgelassen_mit_label": 1411,
+     "durchgelassen_nie_handelbar": 580,
+     "entscheidungen": {
+      "EMBARGO": 195,
+      "HANDELN": 1411,
+      "UNTER_SCHWELLE": 6044
+     },
+     "gewinnquote_basis": 0.5200732313325487,
+     "gewinnquote_durchgelassen": 0.6009922041105599
+    },
+    "holdout": {
+     "n_final": 2738,
+     "n_innen": 1859,
+     "n_validierung": 878,
+     "schwelle": 0.65
+    },
+    "paritaet_max": 2.220446049250313e-16,
+    "sha256": "ba731aced6460560be4fc2f7b16d7e49d817e8c097b971edb9daecdebe63d221"
+   },
+   "zusatz": {
+    "dsr": {
+     "ok": false,
+     "schwelle": "0.95",
+     "wert": 0.0219042568539851
+    },
+    "gewinnfaktor_kosten": {
+     "ok": false,
+     "schwelle": "1.0",
+     "wert": 0.9320277489094387
+    },
+    "nur_berichten": true,
+    "teilperioden": {
+     "ok": false,
+     "positiv": 2,
+     "schwelle": "3/4",
+     "werte": [
+      "-1",
+      "1",
+      "-1",
+      "1"
+     ]
+    }
+   }
+  },
+  {
+   "basis": "S-REV-02-L40-z0.5",
+   "dsr": {
+    "N": 4,
+    "N_eff": 3.485624731857975,
+    "dsr": 0.08709801736477882,
+    "sr0": 0.0954908052369184,
+    "sr_monat": -0.038021042335733474
+   },
+   "fenster_ohne_schwelle": 0,
+   "gegenprobe_3_25": {
+    "bestanden": false,
+    "e_r": -0.05938020156954123,
+    "e_r_untergrenze": -0.11833229943529593,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": false,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 30.41341129997373,
+    "pf_eur": 0.8692082277997966,
+    "quote": 0.6218274111675127,
+    "technik_ok": true,
+    "trades": 394,
+    "verlust_zu_gewinn_eur": 1.8917162187656498
+   },
+   "handelbare_monate": 99.44969199178645,
+   "haupt": {
+    "bewertung": {
+     "bestanden": false,
+     "kennzahlen": {
+      "ausstiege": {
+       "SL": 133,
+       "TP": 242,
+       "ZEITBARRIERE": 17
+      },
+      "band_befunde": {},
+      "e_r": -0.03124543656121626,
+      "e_r_untergrenze": -0.09167710335731286,
+      "gewinner": 246,
+      "hebel": {
+       "max": 5.434459285861281,
+       "min": 5.268422072645627,
+       "mittel": 5.337586109233203
+      },
+      "max_dd_prozent": 21.728472603874973,
+      "n": 392,
+      "pf_eur": 0.9451374695667967,
+      "pf_r": 0.912136572538181,
+      "quote": 0.6275510204081632,
+      "schatten": {},
+      "signale": {
+       "abgelehnt": {
+        "AUSSERHALB_FENSTER": 320,
+        "MAX_STRATEGIEPOSITIONEN": 83,
+        "SPREAD_HOCH": 5,
+        "STOP_ZU_ZIEL": 160,
+        "TAGESBUDGET": 53
+       },
+       "erledigt": 392,
+       "gesamt": 1013,
+       "quote_signal_trade": 0.386969397828233,
+       "sonst": 0
+      },
+      "stop50_ereignisse": [],
+      "tagesverluste": {
+       "max_prozent": 2.905246275522509,
+       "tage_ueber_3": 0
+      },
+      "trades_pro_monat": 3.8451498549790526,
+      "verlust_zu_gewinn_eur": 1.7827369680112275,
+      "verlust_zu_gewinn_r": 1.8472359924793889,
+      "wilson_95": [
+       0.5786709754834778,
+       0.6739554176637277
+      ],
+      "zufall": {
+       "mittel": 0.634984693877551,
+       "p95": 0.6683673469387755
+      }
+     },
+     "kriterien": {
+      "band_budget": {
+       "ok": true,
+       "schwelle": 0,
+       "text": "Hebelband 5.25–14.25 und Tagesbudget je Einstieg (unabhängig nachgerechnet); 0 Trades ohne Einstiegskontext",
+       "wert": 0
+      },
+      "drawdown": {
+       "ok": true,
+       "schwelle": "25",
+       "text": "Max-Drawdown vom laufenden Equity-Hoch < 25 % (kein LOSS_LOCK)",
+       "wert": 21.728472603874973
+      },
+      "erwartung_r": {
+       "ok": false,
+       "schwelle": "0",
+       "text": "einseitige 95-%-Untergrenze von E[R] (iid-Bootstrap, 10000 Wiederholungen, 5. Perzentil) > 0",
+       "wert": -0.09167710335731286
+      },
+      "gewinnfaktor": {
+       "ok": false,
+       "schwelle": "1.2",
+       "text": "Summe Gewinne / Summe Verluste (EUR) ≥ 1.2",
+       "wert": 0.9451374695667967
+      },
+      "quote": {
+       "ok": false,
+       "schwelle": "0.85",
+       "text": "Gewinntrades (Ergebnis > 0) 246/392 ≥ 0.85",
+       "wert": 0.6275510204081632
+      },
+      "stop50": {
+       "ok": true,
+       "schwelle": 0,
+       "text": "keine 50-%-Ereignisse in der Folge (letzte 50, ab 20 Trades, ≤ 0.50) und keine Schattenereignisse LOSS_LOCK/STOP50 im OOS-Zeitraum",
+       "wert": 0
+      },
+      "technik": {
+       "ok": true,
+       "schwelle": "technik_ok, keine Sperren, Parität 100 %",
+       "text": "Lauf technisch gültig (keine Sperre/kein Vorfall, alle Trades vollständig, Signal- und Trade-Parität 100 %); sonst nicht bewertbar = nicht bestanden",
+       "wert": {
+        "datensatz_paritaet": 1.0,
+        "signal_paritaet": 1.0,
+        "sperren": [],
+        "technik_ok": true,
+        "trade_paritaet": 1.0,
+        "unvollstaendig": 0
+       }
+      },
+      "trades": {
+       "ok": true,
+       "schwelle": 200,
+       "text": "OOS-Trades ≥ 200; das Tor zählt Entwicklung + Holdout gemeinsam, hier nur die Entwicklung (strenger)",
+       "wert": 392
+      },
+      "verlust_zu_gewinn": {
+       "ok": true,
+       "schwelle": "3",
+       "text": "Ø Verlust / Ø Gewinn (EUR, realisiert) ≤ 3",
+       "wert": 1.7827369680112275
+      },
+      "zufallsbasis": {
+       "ok": false,
+       "schwelle": "95",
+       "text": "Quote > 95. Perzentil der Zufallsbasis (1000 Wiederholungen, zufällige Richtung)",
+       "wert": 0.6683673469387755
+      }
+     }
+    },
+    "einstieg_nachteil_ticks": {
+     "anteil_ungleich_null": 0.0,
+     "max": 0,
+     "min": 0,
+     "mittel": 0.0,
+     "n": 392
+    },
+    "gesamt": {
+     "max_dd_prozent": 21.728472603874973,
+     "quote": 0.6275510204081632,
+     "trades": 392
+    },
+    "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+    "monatsrenditen": [
+     0.0,
+     -0.021931,
+     0.010890847169269243,
+     0.020956366861834632,
+     0.00235674992396782,
+     0.015750825245597042,
+     -0.01797214711259568,
+     0.009291717114871305,
+     0.0049398035073390245,
+     -0.02706565230302746,
+     0.008549291207031403,
+     0.0,
+     -0.0020059651330407843,
+     -0.012273451379516383,
+     -0.008987209460858325,
+     0.008647835595331025,
+     0.012421042421891102,
+     0.004933806755243667,
+     -0.00756993475735097,
+     0.004260611755005818,
+     -0.027443966741228225,
+     -0.0022764037737898024,
+     -0.023559394955636172,
+     -0.00780389826854622,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.014424799208066864,
+     0.02507930006979242,
+     -0.06303153105405207,
+     0.009332242631781621,
+     -0.036471900545876824,
+     0.008997521319338184,
+     0.022573686240948576,
+     0.011867554321136215,
+     0.009533115200915385,
+     -0.02546599934626373,
+     -0.02372696780938276,
+     0.039109105268089396,
+     -0.03922911525162819,
+     0.0,
+     0.0,
+     0.007540706294573574,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.009058971475717431,
+     0.009055671498922441,
+     0.008333995885280129,
+     0.0047525488243382345,
+     0.0,
+     -0.0061501646386496085,
+     -0.023206107530789683,
+     0.032712691740380315,
+     0.014634590948814316,
+     -0.060785239999027726,
+     0.03842959955711386,
+     0.00022213336887467235,
+     0.030238095753969886,
+     0.00327975385547211,
+     0.003122297860298395,
+     -0.0007731818732734012,
+     -0.0035614799695507056,
+     -0.003725321059712174,
+     0.004695656570337944,
+     -0.020942584022997424,
+     -0.02783578014070481,
+     0.012411400247831475,
+     0.000957413590703514,
+     -0.004387933779916372,
+     -0.013046050922175666,
+     0.005334964536810481,
+     0.02417316657479323,
+     -0.019026050971768176,
+     0.025096400359646442,
+     -0.04483272527202509,
+     -0.016147505228897067,
+     0.0221922097056386,
+     0.045700736470059636,
+     0.005117809594510372,
+     -0.06670172624325703,
+     -0.02610028559410717,
+     -0.010030267753201398,
+     0.011480695779788896,
+     -0.033132708711417935,
+     -0.0012108488206548924,
+     0.005970088160830009,
+     0.04731689803733844,
+     -0.008588359778686333,
+     -0.010097715364525105,
+     0.021009220351139474,
+     0.018762579754933544,
+     0.01252353479791976
+    ],
+    "offen_am_ende": 0,
+    "oos": {
+     "bis": 1625097600,
+     "monate": 101.95,
+     "von": 1356998400
+    },
+    "paritaet": {
+     "signale": {
+      "direkt": 1013,
+      "gleich": 1013,
+      "quote": 1.0,
+      "takt": 1013
+     },
+     "trades": {
+      "geprueft": 392,
+      "gleich": 392,
+      "quote": 1.0,
+      "trades": 392,
+      "zwangsausstiege": 0
+     }
+    },
+    "profil": "HAUPT",
+    "schatten_gesamt": {},
+    "schritte": 71392,
+    "sperren": [],
+    "strategie_hash": "16927f1feb615e4792488158555943fde9bf61daa2b27b33dae7551aa3d568fd",
+    "tagesstopps": 0,
+    "technik_ok": true,
+    "teilperioden": {
+     "positiv": [
+      false,
+      false,
+      true,
+      false
+     ],
+     "r_summe": [
+      -2.745,
+      -2.366,
+      -1.121,
+      -6.015
+     ]
+    },
+    "variante": "F05-REV02-HGB",
+    "vorfaelle": {}
+   },
+   "id": "F05-REV02-HGB",
+   "kosten_x1_5": {
+    "bestanden": false,
+    "e_r": -0.03967695627088655,
+    "e_r_untergrenze": -0.10278906731707846,
+    "kriterien": {
+     "band_budget": true,
+     "drawdown": true,
+     "erwartung_r": false,
+     "gewinnfaktor": false,
+     "quote": false,
+     "stop50": false,
+     "technik": true,
+     "trades": true,
+     "verlust_zu_gewinn": true,
+     "zufallsbasis": false
+    },
+    "max_dd_prozent": 24.885828859445255,
+    "pf_eur": 0.903784701636366,
+    "quote": 0.6187845303867403,
+    "technik_ok": true,
+    "trades": 362,
+    "verlust_zu_gewinn_eur": 1.7959901322275142
+   },
+   "modell": "HGB",
+   "nicht_bewertbar": false,
+   "teilperioden_r": [
+    -2.745,
+    -2.366,
+    -1.121,
+    -6.015
+   ],
+   "trades_pro_handelbarem_monat": 3.941691443673604,
+   "training": {
+    "datensatz_paritaet": {
+     "direkt": 1013,
+     "gleich": 1013,
+     "quote": 1.0,
+     "takt": 1013
+    },
+    "fenster": [
+     {
+      "gepurgt_final": 2,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 2,
+      "n_final": 2424,
+      "n_innen": 1538,
+      "n_validierung": 886,
+      "schwelle": 0.7,
+      "test_bis": 1388534400,
+      "test_von": 1356998400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 489,
+         "quote": 0.5828220858895705,
+         "schwelle": 0.5,
+         "treffer": 285,
+         "wilson_unten": 0.5386382876545086
+        },
+        {
+         "n": 389,
+         "quote": 0.5886889460154242,
+         "schwelle": 0.55,
+         "treffer": 229,
+         "wilson_unten": 0.5391544686395027
+        },
+        {
+         "n": 283,
+         "quote": 0.6007067137809188,
+         "schwelle": 0.6,
+         "treffer": 170,
+         "wilson_unten": 0.5426653008048461
+        },
+        {
+         "n": 187,
+         "quote": 0.6470588235294118,
+         "schwelle": 0.65,
+         "treffer": 121,
+         "wilson_unten": 0.5762332860556408
+        },
+        {
+         "n": 114,
+         "quote": 0.7280701754385965,
+         "schwelle": 0.7,
+         "treffer": 83,
+         "wilson_unten": 0.6399554146928634
+        },
+        {
+         "n": 52,
+         "quote": 0.7115384615384616,
+         "schwelle": 0.75,
+         "treffer": 37,
+         "wilson_unten": 0.5772721196331574
+        },
+        {
+         "n": 22,
+         "quote": 0.6363636363636364,
+         "schwelle": 0.8,
+         "treffer": 14,
+         "wilson_unten": 0.42951708090131013
+        },
+        {
+         "n": 3,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 114,
+       "quote": 0.7280701754385965,
+       "schwelle": 0.7,
+       "treffer": 83,
+       "wilson_unten": 0.6399554146928634
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 2,
+      "gepurgt_validierung": 0,
+      "n_final": 2744,
+      "n_innen": 1853,
+      "n_validierung": 889,
+      "schwelle": 0.7,
+      "test_bis": 1420070400,
+      "test_von": 1388534400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 361,
+         "quote": 0.5817174515235457,
+         "schwelle": 0.5,
+         "treffer": 210,
+         "wilson_unten": 0.5302338315877935
+        },
+        {
+         "n": 271,
+         "quote": 0.6014760147601476,
+         "schwelle": 0.55,
+         "treffer": 163,
+         "wilson_unten": 0.5421583327766204
+        },
+        {
+         "n": 189,
+         "quote": 0.6084656084656085,
+         "schwelle": 0.6,
+         "treffer": 115,
+         "wilson_unten": 0.5373819100176666
+        },
+        {
+         "n": 122,
+         "quote": 0.6065573770491803,
+         "schwelle": 0.65,
+         "treffer": 74,
+         "wilson_unten": 0.5178907917103079
+        },
+        {
+         "n": 63,
+         "quote": 0.6825396825396826,
+         "schwelle": 0.7,
+         "treffer": 43,
+         "wilson_unten": 0.5599646825583142
+        },
+        {
+         "n": 25,
+         "quote": 0.68,
+         "schwelle": 0.75,
+         "treffer": 17,
+         "wilson_unten": 0.48410269273102247
+        },
+        {
+         "n": 4,
+         "quote": 0.75,
+         "schwelle": 0.8,
+         "treffer": 3,
+         "wilson_unten": null
+        },
+        {
+         "n": 1,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 1,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 63,
+       "quote": 0.6825396825396826,
+       "schwelle": 0.7,
+       "treffer": 43,
+       "wilson_unten": 0.5599646825583142
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 0,
+      "n_final": 2632,
+      "n_innen": 1777,
+      "n_validierung": 855,
+      "schwelle": 0.75,
+      "test_bis": 1451606400,
+      "test_von": 1420070400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 514,
+         "quote": 0.5817120622568094,
+         "schwelle": 0.5,
+         "treffer": 299,
+         "wilson_unten": 0.5386160168143728
+        },
+        {
+         "n": 395,
+         "quote": 0.6253164556962025,
+         "schwelle": 0.55,
+         "treffer": 247,
+         "wilson_unten": 0.5765901334024719
+        },
+        {
+         "n": 282,
+         "quote": 0.624113475177305,
+         "schwelle": 0.6,
+         "treffer": 176,
+         "wilson_unten": 0.5662712626213474
+        },
+        {
+         "n": 185,
+         "quote": 0.6378378378378379,
+         "schwelle": 0.65,
+         "treffer": 118,
+         "wilson_unten": 0.5664268010772152
+        },
+        {
+         "n": 108,
+         "quote": 0.6388888888888888,
+         "schwelle": 0.7,
+         "treffer": 69,
+         "wilson_unten": 0.5449722923436943
+        },
+        {
+         "n": 46,
+         "quote": 0.7391304347826086,
+         "schwelle": 0.75,
+         "treffer": 34,
+         "wilson_unten": 0.597408464719844
+        },
+        {
+         "n": 11,
+         "quote": 0.7272727272727273,
+         "schwelle": 0.8,
+         "treffer": 8,
+         "wilson_unten": null
+        },
+        {
+         "n": 2,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 46,
+       "quote": 0.7391304347826086,
+       "schwelle": 0.75,
+       "treffer": 34,
+       "wilson_unten": 0.597408464719844
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 1,
+      "n_final": 2525,
+      "n_innen": 1744,
+      "n_validierung": 781,
+      "schwelle": 0.65,
+      "test_bis": 1483228800,
+      "test_von": 1451606400,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 418,
+         "quote": 0.5909090909090909,
+         "schwelle": 0.5,
+         "treffer": 247,
+         "wilson_unten": 0.5431554770851851
+        },
+        {
+         "n": 313,
+         "quote": 0.6166134185303515,
+         "schwelle": 0.55,
+         "treffer": 193,
+         "wilson_unten": 0.5616441515962323
+        },
+        {
+         "n": 205,
+         "quote": 0.6097560975609756,
+         "schwelle": 0.6,
+         "treffer": 125,
+         "wilson_unten": 0.541547898645675
+        },
+        {
+         "n": 124,
+         "quote": 0.6693548387096774,
+         "schwelle": 0.65,
+         "treffer": 83,
+         "wilson_unten": 0.5825577946350449
+        },
+        {
+         "n": 64,
+         "quote": 0.703125,
+         "schwelle": 0.7,
+         "treffer": 45,
+         "wilson_unten": 0.5822979889645707
+        },
+        {
+         "n": 22,
+         "quote": 0.7272727272727273,
+         "schwelle": 0.75,
+         "treffer": 16,
+         "wilson_unten": 0.5184826598759762
+        },
+        {
+         "n": 6,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.8,
+         "treffer": 4,
+         "wilson_unten": null
+        },
+        {
+         "n": 1,
+         "quote": 1.0,
+         "schwelle": 0.85,
+         "treffer": 1,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 124,
+       "quote": 0.6693548387096774,
+       "schwelle": 0.65,
+       "treffer": 83,
+       "wilson_unten": 0.5825577946350449
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 1,
+      "n_final": 2581,
+      "n_innen": 1636,
+      "n_validierung": 944,
+      "schwelle": 0.75,
+      "test_bis": 1514764800,
+      "test_von": 1483228800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 568,
+         "quote": 0.5669014084507042,
+         "schwelle": 0.5,
+         "treffer": 322,
+         "wilson_unten": 0.5258372132841995
+        },
+        {
+         "n": 476,
+         "quote": 0.5630252100840336,
+         "schwelle": 0.55,
+         "treffer": 268,
+         "wilson_unten": 0.5181373712777629
+        },
+        {
+         "n": 348,
+         "quote": 0.5919540229885057,
+         "schwelle": 0.6,
+         "treffer": 206,
+         "wilson_unten": 0.5395863784783549
+        },
+        {
+         "n": 216,
+         "quote": 0.6064814814814815,
+         "schwelle": 0.65,
+         "treffer": 131,
+         "wilson_unten": 0.5400160407088305
+        },
+        {
+         "n": 102,
+         "quote": 0.6666666666666666,
+         "schwelle": 0.7,
+         "treffer": 68,
+         "wilson_unten": 0.5706063272058552
+        },
+        {
+         "n": 31,
+         "quote": 0.8064516129032258,
+         "schwelle": 0.75,
+         "treffer": 25,
+         "wilson_unten": 0.6371974218820453
+        },
+        {
+         "n": 4,
+         "quote": 0.5,
+         "schwelle": 0.8,
+         "treffer": 2,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 31,
+       "quote": 0.8064516129032258,
+       "schwelle": 0.75,
+       "treffer": 25,
+       "wilson_unten": 0.6371974218820453
+      }
+     },
+     {
+      "gepurgt_final": 0,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 0,
+      "n_final": 2656,
+      "n_innen": 1726,
+      "n_validierung": 929,
+      "schwelle": 0.7,
+      "test_bis": 1546300800,
+      "test_von": 1514764800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 476,
+         "quote": 0.6239495798319328,
+         "schwelle": 0.5,
+         "treffer": 297,
+         "wilson_unten": 0.5796051136521759
+        },
+        {
+         "n": 379,
+         "quote": 0.6437994722955145,
+         "schwelle": 0.55,
+         "treffer": 244,
+         "wilson_unten": 0.5943658232192853
+        },
+        {
+         "n": 279,
+         "quote": 0.6594982078853047,
+         "schwelle": 0.6,
+         "treffer": 184,
+         "wilson_unten": 0.6020635528408578
+        },
+        {
+         "n": 177,
+         "quote": 0.711864406779661,
+         "schwelle": 0.65,
+         "treffer": 126,
+         "wilson_unten": 0.6412027699193825
+        },
+        {
+         "n": 105,
+         "quote": 0.7333333333333333,
+         "schwelle": 0.7,
+         "treffer": 77,
+         "wilson_unten": 0.6416128839600874
+        },
+        {
+         "n": 57,
+         "quote": 0.7192982456140351,
+         "schwelle": 0.75,
+         "treffer": 41,
+         "wilson_unten": 0.5916980132395605
+        },
+        {
+         "n": 23,
+         "quote": 0.782608695652174,
+         "schwelle": 0.8,
+         "treffer": 18,
+         "wilson_unten": 0.5809651698373599
+        },
+        {
+         "n": 5,
+         "quote": 0.8,
+         "schwelle": 0.85,
+         "treffer": 4,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 105,
+       "quote": 0.7333333333333333,
+       "schwelle": 0.7,
+       "treffer": 77,
+       "wilson_unten": 0.6416128839600874
+      }
+     },
+     {
+      "gepurgt_final": 3,
+      "gepurgt_innen": 0,
+      "gepurgt_validierung": 3,
+      "n_final": 2862,
+      "n_innen": 1874,
+      "n_validierung": 988,
+      "schwelle": 0.65,
+      "test_bis": 1577836800,
+      "test_von": 1546300800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 633,
+         "quote": 0.5450236966824644,
+         "schwelle": 0.5,
+         "treffer": 345,
+         "wilson_unten": 0.5060757852388779
+        },
+        {
+         "n": 521,
+         "quote": 0.5489443378119002,
+         "schwelle": 0.55,
+         "treffer": 286,
+         "wilson_unten": 0.5060136526487945
+        },
+        {
+         "n": 386,
+         "quote": 0.5673575129533679,
+         "schwelle": 0.6,
+         "treffer": 219,
+         "wilson_unten": 0.5175083327042613
+        },
+        {
+         "n": 250,
+         "quote": 0.604,
+         "schwelle": 0.65,
+         "treffer": 151,
+         "wilson_unten": 0.5422420845485156
+        },
+        {
+         "n": 136,
+         "quote": 0.6029411764705882,
+         "schwelle": 0.7,
+         "treffer": 82,
+         "wilson_unten": 0.5189689089302262
+        },
+        {
+         "n": 53,
+         "quote": 0.660377358490566,
+         "schwelle": 0.75,
+         "treffer": 35,
+         "wilson_unten": 0.5259478663754829
+        },
+        {
+         "n": 10,
+         "quote": 0.6,
+         "schwelle": 0.8,
+         "treffer": 6,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 250,
+       "quote": 0.604,
+       "schwelle": 0.65,
+       "treffer": 151,
+       "wilson_unten": 0.5422420845485156
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 3,
+      "gepurgt_validierung": 1,
+      "n_final": 2838,
+      "n_innen": 1917,
+      "n_validierung": 918,
+      "schwelle": 0.6,
+      "test_bis": 1609459200,
+      "test_von": 1577836800,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 476,
+         "quote": 0.5966386554621849,
+         "schwelle": 0.5,
+         "treffer": 284,
+         "wilson_unten": 0.5519644947969445
+        },
+        {
+         "n": 373,
+         "quote": 0.6273458445040214,
+         "schwelle": 0.55,
+         "treffer": 234,
+         "wilson_unten": 0.5772129774103479
+        },
+        {
+         "n": 264,
+         "quote": 0.6439393939393939,
+         "schwelle": 0.6,
+         "treffer": 170,
+         "wilson_unten": 0.5844930779981001
+        },
+        {
+         "n": 162,
+         "quote": 0.6419753086419753,
+         "schwelle": 0.65,
+         "treffer": 104,
+         "wilson_unten": 0.5656471611879976
+        },
+        {
+         "n": 78,
+         "quote": 0.6794871794871795,
+         "schwelle": 0.7,
+         "treffer": 53,
+         "wilson_unten": 0.5696065591582605
+        },
+        {
+         "n": 27,
+         "quote": 0.7037037037037037,
+         "schwelle": 0.75,
+         "treffer": 19,
+         "wilson_unten": 0.5151931703585185
+        },
+        {
+         "n": 1,
+         "quote": 1.0,
+         "schwelle": 0.8,
+         "treffer": 1,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 264,
+       "quote": 0.6439393939393939,
+       "schwelle": 0.6,
+       "treffer": 170,
+       "wilson_unten": 0.5844930779981001
+      }
+     },
+     {
+      "gepurgt_final": 1,
+      "gepurgt_innen": 1,
+      "gepurgt_validierung": 1,
+      "n_final": 2824,
+      "n_innen": 1909,
+      "n_validierung": 914,
+      "schwelle": 0.65,
+      "test_bis": 1625097600,
+      "test_von": 1609459200,
+      "validierung": {
+       "kandidaten": [
+        {
+         "n": 592,
+         "quote": 0.5793918918918919,
+         "schwelle": 0.5,
+         "treffer": 343,
+         "wilson_unten": 0.5392391012743066
+        },
+        {
+         "n": 435,
+         "quote": 0.6160919540229886,
+         "schwelle": 0.55,
+         "treffer": 268,
+         "wilson_unten": 0.5695623642889598
+        },
+        {
+         "n": 307,
+         "quote": 0.6123778501628665,
+         "schwelle": 0.6,
+         "treffer": 188,
+         "wilson_unten": 0.556809507769816
+        },
+        {
+         "n": 190,
+         "quote": 0.6526315789473685,
+         "schwelle": 0.65,
+         "treffer": 124,
+         "wilson_unten": 0.5825109369173925
+        },
+        {
+         "n": 94,
+         "quote": 0.6170212765957447,
+         "schwelle": 0.7,
+         "treffer": 58,
+         "wilson_unten": 0.5159955881639535
+        },
+        {
+         "n": 19,
+         "quote": 0.6842105263157895,
+         "schwelle": 0.75,
+         "treffer": 13,
+         "wilson_unten": null
+        },
+        {
+         "n": 1,
+         "quote": 1.0,
+         "schwelle": 0.8,
+         "treffer": 1,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.85,
+         "treffer": 0,
+         "wilson_unten": null
+        },
+        {
+         "n": 0,
+         "quote": null,
+         "schwelle": 0.9,
+         "treffer": 0,
+         "wilson_unten": null
+        }
+       ],
+       "n": 190,
+       "quote": 0.6526315789473685,
+       "schwelle": 0.65,
+       "treffer": 124,
+       "wilson_unten": 0.5825109369173925
+      }
+     }
+    ],
+    "filter": {
+     "basissignale": 7650,
+     "durchgelassen_mit_label": 1013,
+     "durchgelassen_nie_handelbar": 482,
+     "entscheidungen": {
+      "EMBARGO": 195,
+      "HANDELN": 1013,
+      "UNTER_SCHWELLE": 6442
+     },
+     "gewinnquote_basis": 0.5200732313325487,
+     "gewinnquote_durchgelassen": 0.646594274432379
+    },
+    "holdout": {
+     "n_final": 2738,
+     "n_innen": 1859,
+     "n_validierung": 878,
+     "schwelle": 0.75
+    },
+    "paritaet_max": 2.220446049250313e-16,
+    "sha256": "0d329064dae262c7a455c462723459f1b561855cd358992bb64781458d204e22"
+   },
+   "zusatz": {
+    "dsr": {
+     "ok": false,
+     "schwelle": "0.95",
+     "wert": 0.08709801736477882
+    },
+    "gewinnfaktor_kosten": {
+     "ok": false,
+     "schwelle": "1.0",
+     "wert": 0.903784701636366
+    },
+    "nur_berichten": true,
+    "teilperioden": {
+     "ok": false,
+     "positiv": 1,
+     "schwelle": "3/4",
+     "werte": [
+      "-1",
+      "-1",
+      "1",
+      "-1"
+     ]
+    }
+   }
+  }
+ ],
+ "verfahren": {
+  "embargo_handelstage": 5,
+  "gitter": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9
+  ],
+  "hyperparameter": {
+   "HGB": {
+    "early_stopping": false,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "max_iter": 200,
+    "min_samples_leaf": 50,
+    "modell": "HistGradientBoostingClassifier",
+    "random_state": 0
+   },
+   "LOGREG": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "modell": "Pipeline(StandardScaler, LogisticRegression)",
+    "regularisierung": "L2 (l1_ratio 0)",
+    "solver": "lbfgs",
+    "standardisierung": "auf der jeweiligen Trainingsmenge"
+   }
+  },
+  "merkmal_fenster": 520,
+  "min_validierung": 20,
+  "testfenster": [
+   [
+    1356998400,
+    1388534400
+   ],
+   [
+    1388534400,
+    1420070400
+   ],
+   [
+    1420070400,
+    1451606400
+   ],
+   [
+    1451606400,
+    1483228800
+   ],
+   [
+    1483228800,
+    1514764800
+   ],
+   [
+    1514764800,
+    1546300800
+   ],
+   [
+    1546300800,
+    1577836800
+   ],
+   [
+    1577836800,
+    1609459200
+   ],
+   [
+    1609459200,
+    1625097600
+   ]
+  ]
+ }
+}

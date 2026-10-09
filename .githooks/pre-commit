@@ -1,0 +1,8 @@
+#!/bin/sh
+# Git-Hook pre-commit (Plan F-1 §7) – ruft tools/publish.py hook pre-commit auf. Ändern nur der Betreiber.
+ROOT="$(git rev-parse --show-toplevel)"
+if [ -n "$KIT_PY" ]; then PY="$KIT_PY"
+elif [ -x "$ROOT/.venv-312/Scripts/python.exe" ]; then PY="$ROOT/.venv-312/Scripts/python.exe"
+elif [ -x "$ROOT/.venv-312/bin/python" ]; then PY="$ROOT/.venv-312/bin/python"
+else PY=python3; fi
+exec "$PY" -B "$ROOT/tools/publish.py" hook pre-commit "$@"

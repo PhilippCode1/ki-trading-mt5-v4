@@ -1,0 +1,1 @@
+"""Forschung: Datenabzug, Statistik, Versuchsprotokoll."""

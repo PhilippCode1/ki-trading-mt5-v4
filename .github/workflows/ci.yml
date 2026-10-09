@@ -1,0 +1,74 @@
+# CI des privaten Repos (Plan F-1 §7). MetaTrader5 wird nie installiert (Windows-only; Tests nutzen Attrappen).
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kit:
+    name: kit (Python 3.11)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Abhängigkeiten (hash-gesperrt)
+        run: python -m pip install --require-hashes -r requirements/dev.lock.txt
+      - name: ruff
+        run: python -m ruff check .
+      - name: kit_tests
+        run: python -B -m pytest -q -p no:cacheprovider
+
+  kern:
+    name: Kerntests (Python 3.12)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Abhängigkeiten (hash-gesperrt)
+        run: python -m pip install --require-hashes -r requirements/dev.lock.txt
+      - name: Kerntests
+        run: python -B tools/kerntests.py --ci
+
+  scan:
+    name: Geheimnis-Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Baum-Scan (Geheimnisse, Tokens, Logins)
+        run: python -B tools/kit_scan.py --baum
+
+  kit-windows:
+    name: kit (Windows, Python 3.11)
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97  # v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Abhängigkeiten (hash-gesperrt)
+        run: python -m pip install --require-hashes -r requirements/dev.lock.txt
+      - name: kit_tests (der Bot läuft nur unter Windows)
+        run: python -B -m pytest -q -p no:cacheprovider

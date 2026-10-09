@@ -1,0 +1,74 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "py -3.11 -B -I \"$CLAUDE_PROJECT_DIR/tools/agent_waechter.py\" || exit 2",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Read(~/AppData/Roaming/MetaQuotes/**)",
+      "Edit(~/AppData/Roaming/MetaQuotes/**)",
+      "Read(~/AppData/Local/kit/demo/**)",
+      "Read(~/AppData/Local/kit/live/**)",
+      "Read(~/AppData/Local/kit/probe/**)",
+      "Read(~/AppData/Local/kit/freigaben/**)",
+      "Read(~/AppData/Local/kit/marktdaten/**)",
+      "Read(~/AppData/Local/kit/geheim/**)",
+      "Read(~/AppData/Local/kit/sperrliste.txt)",
+      "Edit(~/AppData/Local/kit/demo/**)",
+      "Edit(~/AppData/Local/kit/live/**)",
+      "Edit(~/AppData/Local/kit/probe/**)",
+      "Edit(~/AppData/Local/kit/freigaben/**)",
+      "Edit(~/AppData/Local/kit/marktdaten/**)",
+      "Edit(~/AppData/Local/kit/geheim/**)",
+      "Edit(~/AppData/Local/kit/app/**)",
+      "Edit(~/AppData/Local/kit/sperrliste.txt)",
+      "Read(~/AppData/Local/Packages/*/LocalCache/Local/kit/**)",
+      "Edit(~/AppData/Local/Packages/*/LocalCache/Local/kit/**)",
+      "Read(~/KI-Trading-Bot/demo/**)",
+      "Read(~/KI-Trading-Bot/live/**)",
+      "Read(~/KI-Trading-Bot/probe/**)",
+      "Read(~/KI-Trading-Bot/freigaben/**)",
+      "Read(~/KI-Trading-Bot/marktdaten/**)",
+      "Read(~/KI-Trading-Bot/geheim/**)",
+      "Read(~/KI-Trading-Bot/schreiber/**)",
+      "Read(~/KI-Trading-Bot/app/**)",
+      "Read(~/KI-Trading-Bot/sim/**)",
+      "Read(~/KI-Trading-Bot/trocken/**)",
+      "Read(~/KI-Trading-Bot/backtest/**)",
+      "Read(~/KI-Trading-Bot/UMZUG.json)",
+      "Edit(~/KI-Trading-Bot/**)",
+      "Edit(**/config/live_freigabe.json)",
+      "Edit(**/tools/agent_waechter.py)",
+      "Edit(**/.claude/settings.json)",
+      "Edit(**/.claude/settings.local.json)",
+      "Edit(**/.githooks/**)",
+      "Edit(**/.mcp.json)",
+      "Edit(~/.claude/settings.json)",
+      "Edit(~/.claude/settings.local.json)",
+      "Edit(~/.claude.json)",
+      "Bash(git clean:*)",
+      "Bash(gh repo edit:*)",
+      "Bash(gh repo delete:*)",
+      "Bash(gh repo rename:*)",
+      "Bash(gh repo archive:*)",
+      "Bash(gh gist:*)",
+      "Bash(gh secret:*)",
+      "Bash(claude mcp:*)",
+      "mcp__terminal",
+      "mcp__Claude_Browser",
+      "mcp__claude-in-chrome",
+      "mcp__scheduled-tasks"
+    ]
+  }
+}

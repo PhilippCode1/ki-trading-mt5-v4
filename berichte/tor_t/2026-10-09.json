@@ -1,0 +1,99 @@
+{
+ "schema": "tor_t_zertifikat/1",
+ "datum": "2026-10-09",
+ "urteil": "BESTANDEN",
+ "modus": "probe",
+ "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+ "python": "3.11",
+ "commit": "62e782f2bd0afafb456456bd9d69814b7e40509c",
+ "tore_toml_sha256": "a80e29d94cb8d2a8dbd409f9a9398f840b0acef231b25446ae70d3ca27ed69f8",
+ "export": {
+  "datei": "2026-10-09_export.json",
+  "sha256": "cec576a17ca8a97d44cddff7b8d82ffe4a1559d7614191c3e151be292a1f6a3b"
+ },
+ "fenster": {
+  "fenster_ab_seq": 1,
+  "fenster_bis_seq": 2257,
+  "fenster_von_utc": "2026-10-05T20:28:31+00:00",
+  "fenster_bis_utc": "2026-10-09T11:15:25+00:00"
+ },
+ "zaehlungen": {
+  "gesendet": 378,
+  "eroeffnen": 125,
+  "schliessen": 128,
+  "aendern": 125,
+  "fehlerfrei": 378
+ },
+ "quote": "1.0000",
+ "quote_min": "0.95",
+ "quote_ziel": "0.99",
+ "mindestens": {
+  "min_operationen": 300,
+  "min_eroeffnen": 100,
+  "min_schliessen": 100,
+  "min_aendern": 50
+ },
+ "absicht_zu_operation": "0.9921",
+ "lokal_abgelehnt": 3,
+ "offen": 0,
+ "skripte": {
+  "D-01": "PASS",
+  "D-04": "PASS",
+  "D-06": "PASS",
+  "D-09": "PASS",
+  "D-10": "PASS",
+  "D-12": "PASS",
+  "D-02": "NICHT_TESTBAR",
+  "D-03": "NICHT_TESTBAR",
+  "D-05": "NICHT_TESTBAR",
+  "D-07": "NICHT_TESTBAR",
+  "D-08": "NICHT_TESTBAR"
+ },
+ "kills": {
+  "K1": {
+   "drills": 3,
+   "drill_max_s": 1.016,
+   "ziel_max_s": 5,
+   "echt": 0
+  },
+  "K2": {
+   "drills": 3,
+   "drill_max_s": 1.016,
+   "ziel_max_s": 5,
+   "echt": 0
+  },
+  "K3": {
+   "drills": 3,
+   "drill_max_s": 1.093,
+   "ziel_max_s": 60,
+   "echt": 0
+  }
+ },
+ "defekte": [],
+ "null_toleranz": [
+  "Position > 30 s ohne SL",
+  "Doppel-Fill",
+  "Negativnachweis widerlegt",
+  "eigener Deal ohne Operation",
+  "Sendung auf Nicht-Demo",
+  "UNBEKANNT > 15 min",
+  "Abgleichdifferenz",
+  "Kill außerhalb der Zielzeit (Drill)",
+  "Schutz-/Schließabsicht lokal abgewiesen",
+  "Skript FAIL"
+ ],
+ "belege": [
+  {
+   "datei": "2026-10-05_f03c_nachweise.md",
+   "sha256": "794e3fdbbbc1b52451ba42d465ae8a2a3a7cf49ffce4483f8d3a2f95761ba56d"
+  },
+  {
+   "datei": "2026-10-05_f03c_trockenlauf.json",
+   "sha256": "aed3461f3c4a07a97231be2d7ce4ad31d185ef7368abc8970807dc97bd64fe3c"
+  },
+  {
+   "datei": "2026-10-05_tprobe.md",
+   "sha256": "7be4946b54320df54333645a5d88451dc0d01a6da7c949c6efa5f0c4028052c3"
+  }
+ ]
+}

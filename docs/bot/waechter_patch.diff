@@ -1,0 +1,462 @@
+diff --git a/.claude/settings.json b/.claude/settings.json
+index 6f18ad7..7d3fbf9 100644
+--- a/.claude/settings.json
++++ b/.claude/settings.json
+@@ -33,6 +33,21 @@
+       "Edit(~/AppData/Local/kit/geheim/**)",
+       "Edit(~/AppData/Local/kit/app/**)",
+       "Edit(~/AppData/Local/kit/sperrliste.txt)",
++      "Read(~/AppData/Local/Packages/*/LocalCache/Local/kit/**)",
++      "Edit(~/AppData/Local/Packages/*/LocalCache/Local/kit/**)",
++      "Read(~/KI-Trading-Bot/demo/**)",
++      "Read(~/KI-Trading-Bot/live/**)",
++      "Read(~/KI-Trading-Bot/probe/**)",
++      "Read(~/KI-Trading-Bot/freigaben/**)",
++      "Read(~/KI-Trading-Bot/marktdaten/**)",
++      "Read(~/KI-Trading-Bot/geheim/**)",
++      "Read(~/KI-Trading-Bot/schreiber/**)",
++      "Read(~/KI-Trading-Bot/app/**)",
++      "Read(~/KI-Trading-Bot/sim/**)",
++      "Read(~/KI-Trading-Bot/trocken/**)",
++      "Read(~/KI-Trading-Bot/backtest/**)",
++      "Read(~/KI-Trading-Bot/UMZUG.json)",
++      "Edit(~/KI-Trading-Bot/**)",
+       "Edit(**/config/live_freigabe.json)",
+       "Edit(**/tools/agent_waechter.py)",
+       "Edit(**/.claude/settings.json)",
+diff --git a/kit_tests/test_agent_waechter.py b/kit_tests/test_agent_waechter.py
+index 56c568d..64102af 100644
+--- a/kit_tests/test_agent_waechter.py
++++ b/kit_tests/test_agent_waechter.py
+@@ -2,6 +2,7 @@
+ from __future__ import annotations
+ 
+ import json
++import os
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -63,6 +64,47 @@ VERWEIGERT = [
+     "pip install requests",
+     "uv add numpy",
+     "uvx ruff check",
++    # Laufzeitablage ab F-03b im Benutzerprofil – jede Schreibweise
++    'cat "$HOME/KI-Trading-Bot/probe/journal/2026-10-05.jsonl"',
++    "type %USERPROFILE%\\KI-Trading-Bot\\freigaben\\pin.json",
++    "type %HOMEDRIVE%%HOMEPATH%\\KI-Trading-Bot\\geheim\\hmac.key",
++    "Get-Content $env:USERPROFILE\\KI-Trading-Bot\\demo\\zustand.json",
++    "Get-ChildItem -Recurse $env:USERPROFILE\\KI-Trading-Bot",
++    "ls ~/KI-Trading-Bot/",
++    "dir C:\\Users\\X\\KI-TRA~1\\probe",
++    "cat ../../../KI-Trading-Bot/probe/zustand.json",
++    "grep -r LOSS_LOCK ~/KI-Trading-Bot/*/journal",
++    "rm -rf ~/KI-Trading-Bot/schreiber",
++    'cat "C:/Users/X/AppData/Local/Packages/Claude_abc/LocalCache/Local/kit/probe/zustand.json"',
++    "dir %LOCALAPPDATA%\\kit",
++    # Umgehungen aus dem Review F-03b
++    "cat ~/KI-Trading-Bot//probe/zustand.json",
++    "cat ~/KI-Trading-Bot/./probe/zustand.json",
++    "cat ~/KI-Trading-Bot/export/../geheim/hmac.key",
++    "cd ~/KI-Trading-Bot/export && cat ../geheim/hmac.key",
++    "type %USERPROFILE%\\KI-Trading-Bot\\FREIGA~1\\pin.json",
++    'cat ~/KI-Trading-Bot/p"rob"e/zustand.json',
++    "cat ${env:USERPROFILE}/KI-Trading-Bot/UMZUG.json",
++    "cat ~/KI-*/probe/zustand.json",
++    "cat ~/KI-Trading-Bo[t]/geheim/hmac.key",
++    "grep -r LOSS_LOCK ~",
++    "rg -n hmac $HOME",
++    "Get-ChildItem -Recurse $env:USERPROFILE",
++    "dir /s %USERPROFILE%",
++    "type \\\\?\\C:\\Users\\X\\Dokumente\\a.txt",
++    "dir \\\\localhost\\c$\\Users",
++    "echo K3 > ~/KI-Trading-Bot/export/x.json",
++    ".venv-bot\\Scripts\\python.exe -m kit sichern --ziel work\\s --mit-schluessel",
++    # Umgehungen aus Review-Runde 3
++    "cd ~ && cat KI-Tr*/geheim/hmac.key",
++    "ls ~/.",
++    "cat ~/KI-Trading\\-Bot/probe/zustand.json",
++    "D=KI-Trading-Bot; cat ~/$D/probe/zustand.json",
++    "Get-Content (Join-Path $env:USERPROFILE ('KI-'+'Trading-Bot'))",
++    "type %USERPROFILE%\\KI-Trading-Bot.\\probe\\zustand.json",
++    "pushd ~/KI-Trading-Bot",
++    "Set-Location $env:USERPROFILE\\KI-Trading-Bot; gc probe\\zustand.json",
++    "cd  ~/KI-Trading-Bot/export && cat ../probe/zustand.json",
+ ]
+ ERLAUBT = [
+     "git status --porcelain",
+@@ -87,6 +129,14 @@ ERLAUBT = [
+     "python tools/publish.py lauf --lauf F-00b --titel x --oeffentlich",
+     "cat tools/agent_waechter.py",
+     "ls -la kit",
++    "cat ~/KI-Trading-Bot/export/tor_t-probe-20261005T210000Z.json",
++    ".venv-bot\\Scripts\\python.exe -m kit status --modus probe",
++    # Erwähnungen ohne Pfad bleiben frei (Fehlalarme aus dem Review F-03b)
++    'git commit -m "F-03b: Laufzeitablage nach KI-Trading-Bot verlegt"',
++    "git log --oneline --grep=KI-Trading-Bot",
++    'grep -rn "KI-Trading-Bot" kit docs',
++    'python tools/publish.py lauf --lauf F-03b --titel "Umzug nach KI-Trading-Bot" --oeffentlich',
++    "git fetch https://github.com/PhilippCode1/mt5-trading-ai",
+ ]
+ 
+ 
+@@ -106,7 +156,7 @@ def test_werkzeuge_gesperrt(werkzeug):
+     assert w.pruefe({"tool_name": werkzeug, "tool_input": {}})
+ 
+ 
+-@pytest.mark.parametrize("werkzeug", ["AskUserQuestion", "TodoWrite", "Agent", "Workflow", "mcp__ccd_session__mark_chapter"])
++@pytest.mark.parametrize("werkzeug", ["AskUserQuestion", "TodoWrite", "Agent", "Workflow", "StructuredOutput", "mcp__ccd_session__mark_chapter"])
+ def test_werkzeuge_erlaubt(werkzeug):
+     assert w.pruefe({"tool_name": werkzeug, "tool_input": {}}) is None
+ 
+@@ -126,6 +176,98 @@ def test_dateiregeln():
+     assert w.pruefe({"tool_name": "Edit", "tool_input": {"file_path": str(ROOT / "kit/x.py"), "old_string": "a", "new_string": imp}})
+ 
+ 
++def _datei(werkzeug: str, **eingabe) -> str | None:
++    return w.pruefe({"tool_name": werkzeug, "tool_input": eingabe})
++
++
++def test_dateiregeln_laufzeitablage_im_benutzerprofil():
++    heim = Path.home() / "KI-Trading-Bot"
++    fremd = "C:/" + "Users/" + "Benutzer/KI-Trading-Bot"
++    for pfad in (f"{fremd}/demo/zustand.json", str(heim / "probe" / "zustand.json"), str(heim / "geheim" / "hmac.key"),
++                 str(heim / "app" / "rel_F-03b-2" / "kit" / "cli.py")):
++        assert _datei("Read", file_path=pfad), pfad
++    assert _datei("Edit", file_path=str(heim / "freigaben" / "demo_konten.json"), old_string="a", new_string="b")
++    assert _datei("Write", file_path=str(heim / "probe" / "STOP"), content="0")
++    assert _datei("Glob", path=str(heim), pattern="**/*.jsonl")                     # Ablage selbst durchsuchen
++    assert _datei("Glob", path=fremd.rsplit("/", 1)[0], pattern="KI-Trading-Bot/**")   # Pfad und Muster nur gemeinsam
++    assert _datei("Glob", path=str(Path.home()), pattern="*/probe/*")               # Elternordner + Platzhalter
++    assert _datei("Grep", path=str(Path.home()), pattern="LOSS_LOCK")               # Suche über das ganze Profil
++    assert _datei("Grep", path=str(heim), pattern="x", glob="*.jsonl")
++    assert _datei("LS", path=str(heim))
++    try:
++        relativ = os.path.relpath(heim / "probe" / "zustand.json", ROOT)
++    except ValueError:                                                             # anderes Laufwerk
++        relativ = None
++    if relativ:
++        assert _datei("Read", file_path=relativ)
++        assert _datei("Grep", path=os.path.relpath(Path.home(), ROOT), pattern="x")
++    assert _datei("Read", file_path=str(heim / "export" / "tor_t-probe.json")) is None   # redigierte Exporte bleiben lesbar
++    assert _datei("Glob", path=str(ROOT), pattern="kit/**/*.py") is None
++    assert _datei("Glob", pattern="**/*.md") is None
++    assert _datei("Grep", path=str(ROOT / "kit"), pattern="Schreibsperre") is None
++    assert _datei("Read", file_path=str(ROOT / "kit" / "paths.py")) is None
++
++
++def test_dateiregeln_umgehungen_aus_dem_review(tmp_path, monkeypatch):
++    heim = Path.home() / "KI-Trading-Bot"
++    for pfad in ("\\\\?\\" + str(heim / "probe" / "zustand.json"),            # Geräte-Präfix
++                 "\\\\localhost\\C$\\Users\\X\\KI-Trading-Bot\\export\\x.json",    # UNC: immer gesperrt
++                 str(heim) + "\\export\\..\\probe\\zustand.json",
++                 str(heim) + "/./probe/zustand.json",
++                 str(heim) + "//geheim//hmac.key",
++                 str(heim / "FREIGA~1" / "pin.json"),
++                 str(heim / "UMZUG.json")):
++        assert _datei("Read", file_path=pfad), pfad
++    assert _datei("Edit", file_path=str(heim / "export" / "x.json"), old_string="a", new_string="b")   # export nur lesen
++    assert _datei("Read", file_path=str(heim / "export" / "x.json")) is None
++    assert _datei("Grep", pattern="KI-Trading-Bot", path=str(ROOT)) is None          # Inhaltsmuster, kein Pfad
++    assert _datei("Grep", pattern="AppData/Local/kit") is None
++    lokal = tmp_path / "Lokal"
++    cache = lokal / "Packages" / "Claude_abc" / "LocalCache" / "Local" / "kit"
++    (cache / "probe").mkdir(parents=True)
++    monkeypatch.setenv("LOCALAPPDATA", str(lokal))
++    assert _datei("Read", file_path=str(cache) + "/./probe/zustand.json")
++    assert _datei("Read", file_path=str(cache / "backup" / "x.bundle"))
++    assert _datei("LS", path=str(lokal / "Packages"))                                # Elternordner der Paketkopie
++    assert _datei("Grep", path=str(lokal / "Packages" / "Claude_abc"), pattern="x")
++    for werkzeug, eingabe in (("SendUserFile", {"files": [str(heim / "geheim" / "hmac.key")]}),
++                              ("ArtifactData", {"action": "update", "file_path": str(heim / "freigaben" / "demo_konten.json")}),
++                              ("Artifact", {"asset": True, "file_path": str(heim / "probe" / "zustand.json")}),
++                              ("Artifact", {"files": {"a.json": str(heim / "probe" / "zustand.json")}}),
++                              ("Artifact", {"files": {"a.json": {"from": str(cache / "probe" / "x")}}})):
++        assert w.pruefe({"tool_name": werkzeug, "tool_input": eingabe}), (werkzeug, eingabe)
++    assert w.pruefe({"tool_name": "SendUserFile", "tool_input": {"files": [str(ROOT / "HANDOFF.md")]}}) is None
++
++
++def test_shellpfade_werden_aufgeloest():
++    heim = Path.home()
++    try:
++        relativ = os.path.relpath(heim, ROOT).replace("\\", "/")
++    except ValueError:                                                             # anderes Laufwerk
++        relativ = None
++    if relativ:
++        assert _bash(f"cat {relativ}/KI-Tr*/geheim/hmac.key")                       # Platzhalter ohne Ordnernamen
++        assert _bash(f"cat {relativ}/KI-TRA~1/probe/zustand.json")
++    assert _bash(f"find {heim.parent.as_posix()} -name hmac.key")                   # Suche über einen Vorfahren
++    assert _bash(f"ls {heim.anchor.replace(chr(92), '/')}")
++    assert _bash("ls *.py") is None and _bash("cat kit/paths.py") is None
++    assert _bash("cd kit && ls") is None
++
++
++def test_artifact_ziel_in_der_ablage_gesperrt(tmp_path):
++    heim = Path.home() / "KI-Trading-Bot"
++    for ziel in (heim / "probe", heim / "export"):                                 # Schreiben auch nicht nach export/
++        assert w.pruefe({"tool_name": "Artifact", "tool_input": {"action": "read", "url": "x", "path": "STOP", "out_dir": str(ziel)}})
++    assert w.pruefe({"tool_name": "Artifact", "tool_input": {"action": "read", "url": "x", "path": "a", "out_dir": str(tmp_path)}}) is None
++
++
++def test_einstellungen_sperren_neue_ablage():
++    deny = json.loads((ROOT / ".claude" / "settings.json").read_text(encoding="utf-8"))["permissions"]["deny"]
++    for teil in ("demo", "live", "probe", "freigaben", "marktdaten", "geheim"):
++        assert f"Read(~/KI-Trading-Bot/{teil}/**)" in deny
++    assert "Edit(~/KI-Trading-Bot/**)" in deny
++
++
+ def _hook(eingabe: bytes) -> int:
+     return subprocess.run([sys.executable, "-B", "-I", str(ROOT / "tools" / "agent_waechter.py")], input=eingabe,
+                           capture_output=True, check=False, timeout=30).returncode
+diff --git a/tools/agent_waechter.py b/tools/agent_waechter.py
+index 9b1f260..4c8cd4c 100644
+--- a/tools/agent_waechter.py
++++ b/tools/agent_waechter.py
+@@ -10,6 +10,7 @@ Probe: Ein Befehl mit KIT_WAECHTER_PROBE wird immer verweigert – so prüft jed
+ """
+ from __future__ import annotations
+ 
++import functools
+ import json
+ import os
+ import re
+@@ -27,7 +28,7 @@ ERLAUBTE_WERKZEUGE = {
+     "WebFetch", "WebSearch", "TodoWrite", "Task", "Agent", "TaskOutput", "TaskStop", "ToolSearch",
+     "AskUserQuestion", "Skill", "SlashCommand", "EnterPlanMode", "ExitPlanMode", "Workflow", "ListAgents", "SendMessage",
+     "ReadNotifications", "FetchInboxMessage", "SendUserFile", "PushNotification", "ScheduleWakeup",
+-    "Artifact", "ArtifactComments", "ArtifactData", "ReportFindings",
++    "Artifact", "ArtifactComments", "ArtifactData", "ReportFindings", "StructuredOutput",
+     "ListSkills", "SearchSkills", "SuggestSkills", "SearchPlugins", "SuggestPluginInstall", "ListPlugins",
+     "EnterWorktree", "ExitWorktree",
+ }
+@@ -42,10 +43,38 @@ GESPERRTE_PRAEFIXE = (
+ )
+ 
+ # ---------------------------------------------------------------------------------------------------- Pfade
+-# Laufzeitablage des Bots (nur der Bot selbst schreibt), Freigaben, Rohdaten, Geheimnisse, Sperrliste
+-_KIT_ABLAGE = r"(?:appdata/local|localappdata%?|\$env:localappdata|\$localappdata|\$\{localappdata\})/kit/"
+-GESCHUETZTE_ABLAGE = re.compile(_KIT_ABLAGE + r"(?:demo|live|probe|freigaben|marktdaten|geheim|app|zustand)(?:/|\b)"
+-                                r"|" + _KIT_ABLAGE + r"sperrliste")
++# Laufzeitablage des Bots (nur der Bot selbst schreibt), Freigaben, Rohdaten, Geheimnisse, Sperrliste.
++# Ab F-03b: <Benutzerprofil>\KI-Trading-Bot. Erkannt wird schon das Ordnersegment (auch der 8.3-Kurzname KI-TRA~n), damit
++# relative Pfade, ~, $HOME, %USERPROFILE% und %HOMEDRIVE%%HOMEPATH% gleich greifen. Bis F-03b: %LOCALAPPDATA%\kit, aus
++# paketierten Apps umgeleitet nach ...\Packages\<App>\LocalCache\Local\kit. Unter der Ablage ist nur export/ frei (redigierte
++# Exporte, nur lesen); alles andere ist gesperrt – auch 8.3-Unterordner, ".", "//", Platzhalter und export/..
++_ALTE_ABLAGE = r"(?:appdata/local|localappdata%?|\$env:localappdata|\$localappdata|\$\{localappdata\}|localcache/local)/kit"
++_NEUE_ABLAGE = r"(?:ki-trading-bot|ki-tra~\d+)\.*"                # Windows ignoriert Punkte am Namensende
++_KIT_ABLAGE = r"(?:" + _ALTE_ABLAGE + r"|" + _NEUE_ABLAGE + r")"
++_ENDE = r"(?=$|[\s;&|)>,])"
++GESCHUETZTE_ABLAGE = re.compile(_KIT_ABLAGE + r"/(?!export(?:/|$|[\s;&|)>,]))"     # alles unter der Ablage außer export/
++                                r"|" + _KIT_ABLAGE + r"/export/\S*\.\."              # export/../geheim
++                                r"|" + _ALTE_ABLAGE + r"/?" + _ENDE +                 # die Ablage selbst (Auflisten, Suchen) –
++                                r"|(?<=[/~])" + _NEUE_ABLAGE + r"/?" + _ENDE)        # neue nur im Pfadkontext
++EXPORT = re.compile(_KIT_ABLAGE + r"/export")
++UNC = re.compile(r"^[\\/]{2}")                               # \\?\, \\.\, \\host\c$: Geräte-, Volume- und UNC-Pfade
++UNC_BEFEHL = re.compile(r"(?:^|[\s=(;&|])//(?:[?.]/|[^/\s]+/[a-z]\$)")
++# Suchen und Kopien über das ganze Benutzerprofil erreichen die Ablage, ohne sie zu nennen
++_HEIM = r"(?:~|\$home|\$\{home\}|%userprofile%|\$env:userprofile|%homedrive%%homepath%|[a-z]:/users/[^/\s]+)"
++HEIM_PLATZHALTER = re.compile(r"(?:^|[\s;&|(=])" + _HEIM + r"/[^/\s]*[*?\[{]")
++HEIM_ALLEIN = re.compile(r"(?:^|[\s;&|(=])" + _HEIM + r"/?" + _ENDE)
++HEIM_VARIABLE = re.compile(r"(?:^|[\s;&|(=])" + _HEIM + r"/[$%]")       # ~/$D/probe: Ordnername aus einer Variablen
++PFAD_BAU = re.compile(r"join-path|getfolderpath|path\]::combine")            # PowerShell/.NET setzen Pfade zusammen
++HEIM_BEZUG = re.compile(r"userprofile|localappdata|\$home|~")
++SUCHVERBEN = {"grep", "egrep", "rg", "ag", "ack", "find", "findstr", "tree", "ls", "dir", "gci", "get-childitem", "select-string",
++              "sls", "robocopy", "xcopy", "cp", "copy", "copy-item", "tar", "zip", "7z", "compress-archive", "du"}
++NAVIGATIONSVERBEN = {"cd", "pushd", "chdir", "set-location", "push-location", "sl"}
++EINZELBEFEHL = re.compile(r"\n|;|&&|\|\||\|")
++TOKEN = re.compile(r"[^\s;&|()<>]+")
++SUCHWERKZEUGE = {"Glob", "Grep", "LS"}
++LESEWERKZEUGE = {"Read", "Glob", "Grep", "LS", "NotebookRead"}
++DATEI_SCHLUESSEL = ("file_path", "file_paths", "files", "root", "path", "paths", "notebook_path")
++ZIEL_SCHLUESSEL = ("out_dir",)                               # Werkzeuge, die dorthin schreiben (Artifact read)
+ METAQUOTES = re.compile(r"(?:appdata/roaming|appdata%?|\$env:appdata|\$appdata)/metaquotes|/metaquotes/terminal|accounts\.dat|"
+                         r"assistant\.ini|common\.ini")
+ # Dateien, die nur der Betreiber ändert
+@@ -65,7 +94,7 @@ MT5_WORTE = re.compile(r"(?i)metatrader5|order_send|order_check|\b2234[56]\b")
+ PYTHON_AUFRUF = re.compile(r"(?i)(?:^|[\s;&|(\"'/\\])(?:py|python[0-9.]*|pythonw)(?:\.exe)?(?=[\s\"']|$)|\buv\s+run\b|\buvx\b|"
+                            r"\bpip[0-9.]*(?:\.exe)?\s")
+ VENV_BOT = re.compile(r"(?i)\.venv-bot[\\/]+scripts[\\/]+python(?:w)?(?:\.exe)?[\"']?\s+((?:-[BIEsSuOq]\s+|-[WX]\s*\S+\s+)*)(.*)")
+-KIT_VERBOTEN = re.compile(r"(?i)(?:-m\s+kit|kit[\\/.]cli(?:\.py)?)\b[^\n;&|]*\b(entsperren|freigeben|pin-setzen|live)\b")
++KIT_VERBOTEN = re.compile(r"(?i)(?:-m\s+kit|kit[\\/.]cli(?:\.py)?)\b[^\n;&|]*\b(entsperren|freigeben|pin-setzen|live|sichern)\b")
+ SCHREIB_HART = re.compile(r"(?i)(?:(?<![\d&-])>{1,2}(?![&=])|\brm\b|\bdel\b|\berase\b|remove-item|\bmv\b|\bmove\b|move-item|\bcp\b|"
+                           r"\bcopy\b|copy-item|set-content|out-file|add-content|new-item|rename-item|\btee\b|sed\s+-i|perl\s+-i|"
+                           r"git\s+(?:checkout|restore|apply|am|mv|rm|stash|reset|update-index))")
+@@ -97,16 +126,142 @@ def _rel(pfad: str) -> str | None:
+         return None
+ 
+ 
++def _norm_befehl(text: str) -> str:
++    """Für den Ablage-Abgleich: \\ → /, klein, Quoting entfernt, ${env:x} → $env:x, "/./" und "//" zusammengefasst."""
++    n = re.sub(r"[\"'`]", "", _norm_pfad(text))
++    n = re.sub(r"\$\{env:([a-z_]+)\}", r"$env:\1", n)
++    while "/./" in n:
++        n = n.replace("/./", "/")
++    return re.sub(r"(?<!:)//+", "/", n)
++
++
++def _ablage_wurzeln() -> tuple[Path, ...]:
++    return _wurzeln(str(Path.home()), os.environ.get("LOCALAPPDATA") or "")
++
++
++@functools.lru_cache(maxsize=4)
++def _wurzeln(profil: str, lokal: str) -> tuple[Path, ...]:
++    wurzeln = [Path(profil) / "KI-Trading-Bot"]
++    if lokal:
++        wurzeln.append(Path(lokal) / "kit")
++        try:
++            wurzeln += sorted((Path(lokal) / "Packages").glob("*/LocalCache/Local/kit"))
++        except OSError:
++            pass
++    return tuple(w.resolve() for w in wurzeln)
++
++
++def _pfad_gesperrt(pfad: str, *, suche: bool, schreiben: bool) -> bool:
++    """Pfad zeigt in die Laufzeitablage (außer lesend in export/) – geprüft am Text und am aufgelösten Pfad (relativ zum Repo;
++    ~ und Umgebungsvariablen erweitert; 8.3-Namen, ".", ".." aufgelöst). Bei Such-/Listenwerkzeugen auch jeder Elternordner.
++    UNC-, Geräte- und Volume-Pfade sind immer gesperrt (fail-closed)."""
++    roh = str(pfad).strip()
++    if not roh:
++        return False
++    if UNC.match(roh) or GESCHUETZTE_ABLAGE.search(_norm_befehl(roh)):
++        return True
++    p = Path(os.path.expandvars(os.path.expanduser(roh)))
++    r = (p if p.is_absolute() else ROOT / p).resolve()
++    if GESCHUETZTE_ABLAGE.search(_norm_pfad(str(r))):
++        return True
++    for w in _ablage_wurzeln():
++        if r == w or w in r.parents:
++            teile = r.relative_to(w).parts
++            if schreiben or not teile or teile[0].lower() != "export":
++                return True
++        elif suche and r in w.parents:
++            return True
++    return False
++
++
++def _dateiparameter(eingabe: dict, schluessel: tuple[str, ...] = DATEI_SCHLUESSEL) -> list[str]:
++    """Alle Pfadangaben eines Werkzeugs (auch SendUserFile, Artifact, ArtifactData): Zeichenketten, Listen, Zuordnungen."""
++    werte: list[str] = []
++    for k in schluessel:
++        v = eingabe.get(k)
++        eintraege = v.values() if isinstance(v, dict) else v if isinstance(v, list) else [v]
++        for e in eintraege:
++            if isinstance(e, dict):
++                e = e.get("from") or e.get("path")
++            if isinstance(e, str) and e.strip():
++                werte.append(e)
++    return werte
++
++
++def _pfad_tokens(befehl: str) -> list[str]:
++    """Pfadartige Argumente eines Shell-Befehls (ohne Quoting, Optionen und URLs) in ihren Lesarten: Backslash als Trenner
++    (Windows) und als Escape (Bash); $env:X erweitert; Git-Bash-Laufwerk /c/ → C:/; Punkte am Segmentende entfernt."""
++    aus: list[str] = []
++    for t in TOKEN.findall(re.sub(r"[\"'`]", "", befehl)):
++        if "=" in t:
++            t = t.split("=", 1)[1]                       # --ziel=x, VAR=x
++        if not t or t.startswith("-") or re.match(r"(?i)^[a-z][a-z0-9+.-]*://|^//?[a-z?]{2,12}$", t):   # URL, cmd-Option //FI
++            continue
++        if not re.search(r"[/\\~$%]", t) and t not in (".", ".."):
++            continue
++        for v in {t, re.sub(r"\\(.)", r"\1", t)}:
++            v = re.sub(r"(?i)\$env:([a-z_]+)", lambda m: os.environ.get(m.group(1).upper(), m.group(0)), v)
++            v = re.sub(r"^/([a-zA-Z])(?=/|$)", r"\1:", v)
++            aus.append(re.sub(r"(?<=[^/\\.])\.+(?=[/\\]|$)", "", v))
++    return aus
++
++
++def _verb(einzel: str) -> str:
++    """Befehlsname eines Einzelbefehls (ohne vorangestellte VAR=wert, ohne Pfad), klein."""
++    for t in re.sub(r"[\"'`(]", " ", einzel).split():
++        if not re.match(r"^[A-Za-z_][A-Za-z0-9_]*=", t):
++            return re.split(r"[/\\]", t.lower())[-1].removesuffix(".exe")
++    return ""
++
++
++def _befehl_pfad_gesperrt(befehl: str) -> str | None:
++    """Je Einzelbefehl die Argumente aufgelöst prüfen (relativ zum Repo, Variablen, 8.3, ..):
++    - jedes Argument, das in die Ablage zeigt (außer lesend export/);
++    - bei Such-/Listen-/Kopierbefehlen und Ordnerwechseln auch jeder Elternordner der Ablage;
++    - Platzhalter-Argumente über ihren festen Anfang (ist der ein Elternordner, wird gesperrt)."""
++    for einzel in EINZELBEFEHL.split(befehl):
++        verb = _verb(einzel)
++        if verb in NAVIGATIONSVERBEN and re.search(_KIT_ABLAGE, _norm_befehl(einzel)):
++            return "Ordnerwechsel in die Laufzeitablage ist gesperrt – nur über die kit-CLI."
++        suche = verb in SUCHVERBEN or verb in NAVIGATIONSVERBEN
++        if suche and HEIM_ALLEIN.search(_norm_befehl(einzel)):
++            return "Suchen, Auflisten und Kopieren über das ganze Benutzerprofil sind gesperrt (erreicht die Laufzeitablage)."
++        for t in _pfad_tokens(einzel):
++            platzhalter = bool(re.search(r"[*?\[{]", t))
++            basis = _glob_basis("", t) if platzhalter else t
++            if UNC.match(basis) or not (re.search(r"[A-Za-z0-9~]|\.\.", basis) or (suche and basis == "/")):
++                continue                                 # Regex-/Code-Bruchstücke wie \\s, \[ oder /*; UNC prüft UNC_BEFEHL
++            try:
++                if _pfad_gesperrt(basis, suche=suche or platzhalter, schreiben=False):
++                    return "Befehl zeigt (aufgelöst) in die Laufzeitablage oder durchsucht einen Elternordner von ihr – nur über die kit-CLI."
++            except (OSError, ValueError, RuntimeError):
++                continue                                 # unauflösbar: bleibt bei der Textprüfung
++    return None
++
++
++def _glob_basis(pfad: str, muster: str) -> str:
++    """Fester Anfang eines Glob-Ausdrucks (bis zum ersten Platzhalter) als Verzeichnis."""
++    voll = muster if not pfad or Path(muster).is_absolute() else pfad.rstrip("/\\") + "/" + muster
++    fest = re.split(r"[*?\[{]", voll, maxsplit=1)[0]
++    return fest if fest.endswith(("/", "\\")) or fest == voll else os.path.dirname(fest) or "."
++
++
+ def pruefe_datei(werkzeug: str, eingabe: dict) -> str | None:
+     pfad = eingabe.get("file_path") or eingabe.get("notebook_path") or eingabe.get("path") or ""
+     roh = _norm_pfad(str(pfad))
+-    if GESCHUETZTE_ABLAGE.search(roh):
++    lesend = werkzeug in LESEWERKZEUGE
++    if _pfad_gesperrt(str(pfad), suche=werkzeug in SUCHWERKZEUGE, schreiben=not lesend):
+         return "Zugriff auf die Laufzeitablage/Freigaben/Rohdaten/Sperrliste des Bots ist dem Agenten gesperrt (nur über die kit-CLI)."
+     if METAQUOTES.search(roh):
+         return "Zugriff auf MetaQuotes-Terminaldaten (Konten, Schlüssel, Einstellungen) ist dem Agenten gesperrt."
+-    if werkzeug in {"Read", "Glob", "Grep", "LS", "NotebookRead"}:
+-        muster = str(eingabe.get("pattern") or "")
+-        if GESCHUETZTE_ABLAGE.search(_norm_pfad(muster)) or METAQUOTES.search(_norm_pfad(muster)):
++    if lesend:                                           # Grep-„pattern“ ist ein Inhaltsmuster, kein Pfad
++        texte = [str(eingabe.get("glob") or "")]
++        if werkzeug == "Glob":                           # Pfad und Muster gemeinsam: path=<Profil>, pattern=KI-Trading-Bot/**
++            muster = str(eingabe.get("pattern") or "")
++            if UNC.match(muster.strip()) or _pfad_gesperrt(_glob_basis(str(pfad), muster), suche=True, schreiben=False):
++                return "Suchmuster zeigt in gesperrte Ablagen."
++            texte += [muster, roh.rstrip("/") + "/" + _norm_pfad(muster)]
++        if any(t and (GESCHUETZTE_ABLAGE.search(_norm_befehl(t)) or METAQUOTES.search(_norm_pfad(t))) for t in texte):
+             return "Suchmuster zeigt in gesperrte Ablagen."
+         return None
+     # schreibende Werkzeuge
+@@ -150,12 +305,20 @@ def pruefe_befehl(befehl: str) -> str | None:
+     if PROBE in befehl:
+         return f"{PROBE}: Wächter aktiv – Probe korrekt verweigert."
+     n = _norm_pfad(befehl)
+-    if GESCHUETZTE_ABLAGE.search(n):
++    k = _norm_befehl(befehl)
++    if UNC_BEFEHL.search(re.sub(r"[\"'`]", "", n)):
++        return "UNC-, Geräte- und Volume-Pfade sind für den Agenten gesperrt."
++    if GESCHUETZTE_ABLAGE.search(k) or (EXPORT.search(k) and (".." in k or SCHREIB_HART.search(befehl))):
+         return "Befehl berührt die Laufzeitablage/Freigaben/Rohdaten/Sperrliste des Bots – nur über die kit-CLI."
++    if HEIM_PLATZHALTER.search(k) or HEIM_VARIABLE.search(k) or (PFAD_BAU.search(k) and HEIM_BEZUG.search(k)):
++        return "Suchen, Auflisten und Kopieren über das ganze Benutzerprofil sind gesperrt (erreicht die Laufzeitablage)."
++    grund = _befehl_pfad_gesperrt(befehl)
++    if grund:
++        return grund
+     if METAQUOTES.search(n):
+         return "Befehl berührt MetaQuotes-Terminaldaten (Konten, Schlüssel, Einstellungen) – gesperrt."
+     if KIT_VERBOTEN.search(befehl):
+-        return "kit entsperren/freigeben/pin-setzen/live darf nur der Betreiber in seiner eigenen Konsole ausführen."
++        return "kit entsperren/freigeben/pin-setzen/live/sichern darf nur der Betreiber in seiner eigenen Konsole ausführen."
+     if BETREIBER_NAMEN.search(befehl) and (SCHREIB_HART.search(befehl)
+                                            or (SCHREIB_WEICH.search(befehl) and not re.search(r"(?i)-m\s+pytest\b", befehl))):
+         return "Wächter, Hooks, Claude-Einstellungen und Live-Freigabe ändert nur der Betreiber."
+@@ -260,6 +423,9 @@ def pruefe(ereignis: dict) -> str | None:
+         return pruefe_befehl(befehl)
+     if werkzeug in {"Read", "Glob", "Grep", "Write", "Edit", "MultiEdit", "NotebookEdit", "NotebookRead", "LS"}:
+         return pruefe_datei(werkzeug, eingabe)
++    for pfad, schreiben in [(p, False) for p in _dateiparameter(eingabe)] + [(p, True) for p in _dateiparameter(eingabe, ZIEL_SCHLUESSEL)]:
++        if _pfad_gesperrt(pfad, suche=False, schreiben=schreiben) or METAQUOTES.search(_norm_pfad(pfad)):
++            return f"Werkzeug {werkzeug}: Dateiangabe zeigt in die Laufzeitablage oder MetaQuotes-Daten – gesperrt."
+     return None
+ 
+ 

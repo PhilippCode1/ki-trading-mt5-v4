@@ -1,0 +1,9 @@
+# Forschungsumgebung F-05 (.venv-forschung, Python 3.11): Training des Meta-Filters offline, nie im Bot.
+# Nur PyPI, hash-gesperrt über requirements/forschung.lock.txt; kit/ bleibt Standardbibliothek.
+scikit-learn==1.9.1
+numpy==2.4.6
+scipy==1.17.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+pytest==9.1.1
+hypothesis==6.168.1                 # kit_tests/conftest.py lädt hypothesis (Forschungstests laufen dort mit)

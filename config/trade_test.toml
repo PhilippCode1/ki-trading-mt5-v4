@@ -1,0 +1,44 @@
+# Verfahrensparameter des Trade-Tests (Tor 85, Plan F-1 §5; Vorregistrierung docs/bot/prereg/F04_ENTWURF.md §1 und §5).
+# Schwellen stehen allein in config/tore.toml ([tor_85], [stop50], [band], [limits]) und werden hier nicht gedoppelt.
+# Nach dem ersten Commit eingefroren (SHA-256 in kit/gates/trade_test.py). Eine Änderung beschließt nur der Betreiber;
+# sie zählt als neuer Versuch (neue Vorregistrierung).
+version = 1
+
+[walk_forward]                          # Prereg §1: Anpassung 3 Jahre, Test 1 Jahr, rollierend; nur Trades außerhalb der Anpassung
+anpassung_jahre = 3
+test_jahre = 1
+entwicklung_start = "2010-01-01"
+entwicklung_ende = "2021-06-30"         # letzter Tag (einschließlich); Holdout 01.07.2021–30.06.2026 bleibt ungezogen
+
+[konto]                                 # Backtest-Konto
+start_equity = "10000"
+hebel = 100
+waehrung = "EUR"
+versatz_s = 10800                       # Serverzeit = UTC + 3 h (Servertag für Tagesanker und Tagesverluste)
+
+[bootstrap]                             # Erwartungswert in R: einseitige 95-%-Untergrenze des Mittelwerts, iid-Bootstrap
+wiederholungen = 10000
+saat = 4041
+untergrenze_perzentil = "5"
+
+[zufall]                                # Zufallsbasis: zufällige Richtung je Trade, komplette Ausstiegslogik, gleiche Einstiegszeiten
+wiederholungen = 1000
+saat = 4042
+perzentil = "95"
+
+[kosten]                                # EUR je Lot und Seite; Gegenprobe der Kosten mit kostenfaktor
+provision_gemessen = "0"                # erster Demo-Trade
+provision_gegenprobe = "3.25"           # Startwert cost_truth
+kostenfaktor = "1.5"
+dreifachtag = 2                         # Mittwoch (0 = Montag)
+
+[zusatz]                                # Plan-Zusatzkriterien: nur berichten (zählen erst mit OK des Betreibers)
+nur_berichten = true
+dsr_min = "0.95"
+teilperioden = 4
+teilperioden_positiv_min = 3
+gewinnfaktor_kosten_min = "1.0"
+
+[kennzahlen]                            # Basis der Geldkennzahlen im Tor (R wird zusätzlich berichtet)
+gewinnfaktor_basis = "EUR"
+verlust_zu_gewinn_basis = "EUR"

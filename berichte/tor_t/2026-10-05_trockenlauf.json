@@ -1,0 +1,64 @@
+{
+ "von": "2026-10-07T05:00:00+00:00",
+ "bis": "2026-10-14T05:00:00+00:00",
+ "schritte": 604800,
+ "neustarts": 1,
+ "trades": 4,
+ "rollover": [
+  [
+   "2026-10-07",
+   3,
+   true
+  ],
+  [
+   "2026-10-08",
+   1,
+   true
+  ],
+  [
+   "2026-10-09",
+   1,
+   true
+  ],
+  [
+   "2026-10-12",
+   1,
+   false
+  ],
+  [
+   "2026-10-13",
+   1,
+   false
+  ]
+ ],
+ "wochenende": true,
+ "replay_gleich": true,
+ "replay_abweichungen": [],
+ "abgleich_differenzen": [],
+ "sperren": [],
+ "meldungen": 0,
+ "tor_t": {
+  "urteil": "BESTANDEN",
+  "mechanik_hash": "9017eec4ea4f46472371ff9ad392a1ca055546d25bdc7bca6f5b0c2641b992b0",
+  "fenster_ab_seq": 1,
+  "gesendet": 3001,
+  "eroeffnen": 1003,
+  "schliessen": 999,
+  "aendern": 999,
+  "fehlerfrei": 3001,
+  "quote": "1.0000",
+  "quote_min": "0.95",
+  "quote_ziel": "0.99",
+  "absicht_zu_operation": "1.0000",
+  "lokal_abgelehnt": 0,
+  "skripte": {},
+  "defekte": [],
+  "mindestens": {
+   "min_operationen": 300,
+   "min_eroeffnen": 100,
+   "min_schliessen": 100,
+   "min_aendern": 50
+  }
+ },
+ "ok": true
+}

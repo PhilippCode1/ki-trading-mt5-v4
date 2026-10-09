@@ -1,0 +1,4 @@
+# Keine Zeilenendenumwandlung (auch nicht durch Git für Windows mit autocrlf=true): config/tore.toml ist SHA-256-gepinnt,
+# die Mechanik-Dateien bilden den mechanik_hash, docs/bot/prereg/ ist hashgebunden, referenz/ bleibt bytegleich und
+# die sh-Hooks in .githooks/ brauchen LF. Ohne diese Zeile startet der Bot auf einem frisch geklonten Rechner nicht.
+* -text

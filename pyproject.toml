@@ -1,0 +1,27 @@
+[project]
+name = "ki-trading-mt5-v4"
+version = "0.1.0.dev0"
+description = "KI-Trading MT5 – schlanker Demo-Bot kit (Fast-Track, Plan F-1); eingefrorene Referenz unter referenz/, Konzeptphase in den Tags konzept-*"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+# Standard: kit-Suite. Kerntests der eingefrorenen Referenz (referenz/): tools/kerntests.py (Interpreter .venv-312).
+testpaths = ["kit_tests"]
+addopts = "-p no:cacheprovider"
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+extend-exclude = ["work", ".uv-cache", ".venv-311", ".venv-312", ".venv-313", ".venv-forschung"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# Datentabellen (Szenarien bzw. wortgleiche Anforderungs-/Registertexte) bleiben einzeilig lesbar.
+"referenz/oracles/t02_band.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["reference", "oracles", "validation", "tests", "tools", "kit", "kit_tests", "forschung"]

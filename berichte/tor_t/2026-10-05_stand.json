@@ -1,0 +1,91 @@
+{
+ "urteil": "LAEUFT",
+ "mechanik_hash": "4fab5281ae45e39df25fb2c54065ef50a091e0a321c10afec67d0b40f7be3b93",
+ "fenster_ab_seq": 1,
+ "gesendet": 6,
+ "eroeffnen": 1,
+ "schliessen": 4,
+ "aendern": 1,
+ "fehlerfrei": 6,
+ "quote": "1.0000",
+ "quote_min": "0.95",
+ "quote_ziel": "0.99",
+ "absicht_zu_operation": "0.6667",
+ "lokal_abgelehnt": 3,
+ "skripte": {
+  "D-01": "PASS",
+  "D-04": "PASS",
+  "D-06": "PASS",
+  "D-09": "PASS",
+  "D-10": "PASS",
+  "D-12": "PASS",
+  "D-02": "NICHT_TESTBAR",
+  "D-03": "NICHT_TESTBAR",
+  "D-05": "NICHT_TESTBAR",
+  "D-07": "NICHT_TESTBAR",
+  "D-08": "NICHT_TESTBAR"
+ },
+ "kills": [
+  {
+   "stufe": 1,
+   "dauer_s": 1.0,
+   "drill": true,
+   "seq": 121
+  },
+  {
+   "stufe": 2,
+   "dauer_s": 1.0,
+   "drill": true,
+   "seq": 125
+  },
+  {
+   "stufe": 3,
+   "dauer_s": 1.093,
+   "drill": true,
+   "seq": 129
+  },
+  {
+   "stufe": 1,
+   "dauer_s": 1.015,
+   "drill": true,
+   "seq": 201
+  },
+  {
+   "stufe": 2,
+   "dauer_s": 1.016,
+   "drill": true,
+   "seq": 205
+  },
+  {
+   "stufe": 3,
+   "dauer_s": 1.062,
+   "drill": true,
+   "seq": 209
+  },
+  {
+   "stufe": 1,
+   "dauer_s": 1.016,
+   "drill": true,
+   "seq": 285
+  },
+  {
+   "stufe": 2,
+   "dauer_s": 1.0,
+   "drill": true,
+   "seq": 289
+  },
+  {
+   "stufe": 3,
+   "dauer_s": 1.078,
+   "drill": true,
+   "seq": 293
+  }
+ ],
+ "defekte": [],
+ "mindestens": {
+  "min_operationen": 300,
+  "min_eroeffnen": 100,
+  "min_schliessen": 100,
+  "min_aendern": 50
+ }
+}

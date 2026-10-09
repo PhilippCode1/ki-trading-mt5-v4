@@ -1,0 +1,3 @@
+# Laufzeit des Bots (nur Windows, Python 3.11; nur PyPI, hash-gesperrt über requirements/bot-runtime.lock.txt)
+MetaTrader5==5.0.6090
+numpy==1.26.4

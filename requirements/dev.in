@@ -1,0 +1,5 @@
+# Entwicklungsabhängigkeiten C-01 (nur PyPI, hash-gesperrt über requirements/dev.lock.txt)
+pytest
+hypothesis
+jsonschema
+ruff

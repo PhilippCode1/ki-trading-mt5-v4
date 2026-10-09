@@ -1,0 +1,63 @@
+# Eingefrorene Schwellen, Zählregeln und Risikowerte (Plan F-1 §4–§5; Entscheidungen D3–D5, V1, V4, V5).
+# Nach dem ersten Commit unveränderlich (Wächter + SHA-256 in kit/gates/__init__.py). Eine Änderung beschließt nur der Betreiber
+# (docs/bot/ENTSCHEIDUNGEN.md); nach Datensicht zählt sie als neuer Versuch und startet die betroffenen Zählungen neu.
+version = 1
+
+[band]                                  # D5 versiegelt: Hebelband 5–15, Strategiebuch-Korridor 5,25–14,25
+boden = "5"
+deckel = "15"
+korridor_unten = "5.25"
+korridor_oben = "14.25"
+max_strategiepositionen = 1             # V5
+pruefpunkt_berlin = "21:30"             # täglicher Prüfpunkt zusätzlich zu "nach jedem Fill"
+probe_ohne_untergrenze = true           # V4: Probe nur von der Untergrenze ausgenommen
+
+[limits]
+tagesbudget_prozent = "3"               # D4: Einstiegsprüfung + Tagesstopp, Anker = Equity zu Serverzeit 00:00
+loss_lock_prozent = "25"                # D5 versiegelt: Anker = Equity beim Start der Messung/Demo-Live
+stop_zu_ziel_max = "3"                  # D4/V1: geplant und realisiert
+margin_level_min_prozent = "300"
+
+[stop50]                                # D3: rollierend ≤ 50 % → K3 + Sperre (Aufheben nur Betreiber)
+fenster = 50
+ab_trades = 20
+quote_max = "0.50"
+
+[zaehlregeln]                           # Plan §5
+namensraum = "STRATEGIE"
+gewinn = "Ergebnis > 0 (0 = Verlust)"
+ergebnis = "Summe aller Deals der Position inkl. Kommission, Swap und Gebühren"
+trade = "Position von der Eröffnung bis zur vollständigen Schließung"
+neustart = "neuer strategie_hash oder Aufhebung der 50-%-Sperre startet das Zählfenster neu"
+
+[tor_t]                                 # D9
+min_operationen = 300
+min_eroeffnen = 100
+min_schliessen = 100
+min_aendern = 50
+quote_min = "0.95"
+quote_ziel = "0.99"
+ohne_sl_max_s = 30
+unbekannt_max_s = 900
+kill_k1_k2_max_s = 5
+kill_k3_max_s = 60
+mechanik = ["kit/domain/**", "kit/broker/**", "kit/orders/**", "kit/state/**", "kit/risk/**", "kit/run/**", "kit/probe/**",
+            "kit/daten/**", "kit/live_guard.py", "requirements/bot-runtime.lock.txt"]
+
+[tor_85]                                # D3/D4: Trade-Test → Demo-Live
+min_trades_oos = 200
+quote_min = "0.85"
+min_trades_holdout = 40
+quote_min_holdout = "0.85"
+gewinnfaktor_min = "1.2"
+verlust_zu_gewinn_max = "3"
+drawdown_max_prozent = "25"
+erwartung_untergrenze_prozent = "95"
+zufall_wiederholungen = 1000
+zufall_perzentil = "95"
+
+[tor_95]                                # D3: Demo-Live → Echtgeld-Entscheidung (nur Betreiber)
+min_trades = 100
+min_monate = 3
+quote_min = "0.95"
+gewinnfaktor_min = "1.2"

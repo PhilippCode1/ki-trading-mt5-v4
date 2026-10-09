@@ -1,0 +1,50 @@
+# Laufzeit- und Werkzeugartefakte (nicht Teil des Paketstands)
+.venv-*/
+.uv-cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+work/
+# Profiler-Ausgaben
+prof.out
+*.prof
+*.pstats
+*.lprof
+
+# --- Fast-Track (F-00): nie committen ---
+.venv/
+.mypy_cache/
+.coverage
+htmlcov/
+/.env
+/.env.*
+!/.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.kdbx
+.claude/settings.local.json
+# MT5-Terminaldateien (Konten, Server, Einstellungen, Historie)
+accounts.dat
+servers.dat
+terminal.ini
+common.ini
+assistant.ini
+*.hcc
+*.hc
+*.hst
+# Laufzeit- und Marktdaten des Bots gehören nach %USERPROFILE%\KI-Trading-Bot\ (nie ins Repo)
+/laufzeit/
+/daten/
+/_export/
+*.sqlite
+*.sqlite3
+*.db
+*.bundle
+*.zip
+*.7z
+# VPS: lokale Konfiguration (Vorlage vps.config.example.psd1 ist im Repo)
+deploy/windows-vps/vps.config.psd1
